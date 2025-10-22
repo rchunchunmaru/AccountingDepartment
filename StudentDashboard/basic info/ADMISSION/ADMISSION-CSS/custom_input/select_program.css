@@ -1,0 +1,94 @@
+/* Styled Input Field (like custom select) */
+#mqcqc_academic_program {
+  width: 100%;
+  margin: 0;
+  padding: 4px 4px 4px 10px;
+  font-size: 12px;
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: white;
+  min-height: 3.2em;
+  display: flex;
+  align-items: center;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url('caret-down-fill.svg');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+#mqcqc_academic_program::placeholder {
+  color: var(--primary-color);
+  font-size:12px;
+}
+
+#mqcqc_academic_program:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Wrapper */
+.program-wrapper {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+/* Dropdown Menu */
+.program-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: white;
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  font-size: var(--text-xxsmall);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 9999;
+  display: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Group Header */
+.program-dropdown li.dropdown-header {
+  font-weight: bold;
+  text-align: left;
+  font-size: var(--text-xxsmall);
+  padding: 0.5rem 0.8rem;
+  color: var(--primary-color);
+  cursor: default;
+  pointer-events: none;
+  border-top: 1px solid #ddd;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Dropdown Items */
+.program-dropdown li {
+  padding: 0.5rem 0.5rem 0.5rem 10px;
+  margin: 0 2%;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.program-dropdown li:hover {
+  background-color: #DEDEDE;
+}
