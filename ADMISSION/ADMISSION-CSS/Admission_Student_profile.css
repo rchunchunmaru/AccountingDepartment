@@ -1,0 +1,181 @@
+
+.main-content .container0 {
+  max-width: var(  --profile-card-max-width);
+  margin: var(--v-space) auto;
+  background: var(--container-color);
+  border-radius: 8px;
+  box-shadow: var(--primary-shadow);
+  padding: 25px 35px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.container0::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 500px;
+  background: url('Ad_mqc-logo.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.15;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.container * {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  font-size:var(--text-small);
+}
+
+.title {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.header .title h1 {
+  margin: 0 0 10px 0;
+  font-size: var(--text-medium);
+  color: var(--primary-color);
+}
+
+.small-text {
+  font-size: var(--text-xsmall);
+  color: #555;
+  line-height: 1.6;
+}
+
+.profile-box {
+  width: 175px;
+  height:175px;
+  border: 1px solid #003366;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-top:7px;
+  margin-left: 50px;
+}
+
+.application-id {
+  margin-top: 10px;
+  font-size: var(--text-xxsmall);
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+    margin-left: 50px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Other styles unchanged */
+p {
+  margin: 2px 0;
+  line-height: 1.4;
+  font-size: var(--text-xsmall);
+}
+
+.section {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.section h1 {
+  font-size: var(--text-small);
+  margin-bottom:var(--v-space);
+  color: var(--primary-color);
+}
+
+.label_001 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: var(--text-xsmall);
+}
+.label_000 {
+  text-transform: uppercase;
+  color:var(--P-color);
+}
+.documents table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.documents th,
+.documents td {
+  border: 1px solid var(--tertiary-color);
+  padding: 10px;
+  font-size: var(--text-xsmall);
+  text-align: left;
+}
+
+.documents th {
+  background: var(--primary-color);
+  color:white;
+  text-transform: uppercase;
+}
+
+.documents td:first-child {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.documents td.center-link {
+  text-align: center !important;
+}
+
+.documents a {
+  color: var(--primary-color);
+}
+
+.documents a:hover {
+  text-decoration: underline;
+}
+
+.action-icons i {
+  margin-right: 8px;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: color 0.2s;
+}
+
+.action-icons i:hover {
+  color: var(--focus-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 20px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #00152d;
+}
+
+.receipt-btn {
+  text-align: right;
+  margin-top: 15px;
+}

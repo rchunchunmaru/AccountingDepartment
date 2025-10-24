@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary The Queen College of Quezon City</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <!-- PNG favicons for specific sizes -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
+    <!-- Apple Touch Icon for iOS devices -->
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" sizes="180x180">
+    <!-- Microsoft Windows Tiles -->
+    <link rel="android-chrome-512x512" type="image/png" href="/assets/images/android-chrome-512x512.png" sizes="512x512">
+    <link rel="android-chrome-192x192" type="image/png" href="/assets/images/android-chrome-192x192.png" sizes="192x192">
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="ADMISSION-CSS/Admission_table.css">
+    <link rel="stylesheet" href="ADMISSION-CSS/FILTER/admission_searchbar.css">
+    <link rel="stylesheet" href="masterlist.css">
+    <link rel="stylesheet" href="scrollbar.css">
+
+  </head>
+
+<body>
+    <section class="navbar">
+      <div class="nav-content">
+        <div class="mqc-logo-box">
+          <img src="assets/images/mqc-logo.png" alt="MQCQC logo" />
+          <h3>MARY THE QUEEN COLLEGE OF QUEZON CITY</h3>
+        </div>
+        <button class="sidebar-toggle" aria-label="Toggle Dashboard Sudebar">
+          <i class="fa-solid fa-bars"></i>
+          </i>
+        </button>
+      </div>
+    </section>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="/assets/images/personImage.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Name</h4>
+                        <span>name@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h5>User Dashboard</h5>
+                    <ul>
+                        <li><a href="Admission_view_profile.html"><i class="fas fa-user"></i> View Profile</a></li>
+
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h5>MQCQC Services</h5>
+                    <ul>
+                        <li><a href="Admission_admin_dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fa-solid fa-user-check"></i> Enrolled</a></li>
+                        <li><a href="Admission_applicants.html"><i class="fa-regular fa-id-card"></i> Applicants</a></li>
+                        <li><a href="#"><i class="fa-solid fa-bullhorn"></i>Announcement</a></li>
+                        
+                        <li class="has-submenu">
+                          <a href="#" class="submenu-toggle">
+                            <i class="fa-solid fa-circle-user"></i>Manage Account 
+                            <i class="fa-solid fa-caret-down"></i>      
+                          </a>
+                          <ul class="sub-menu">
+                            <li><a href="Admission_create_account.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Create Account</a></li>
+                            <li><a href="Admission_student_acc-tbl.html"><i class="fa-solid fa-users"></i>Students</a></li>
+                            <li><a href="#"><i class="fa-solid fa-user-shield"></i>Officers & Osas</a></li>
+                          </ul>
+                        </li>
+                       <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i>History Logs</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section nav-bottom">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-panel"></div>
+        </aside>
+
+            <!-- MAIN CONTENT -->
+<main class="main-content">
+
+<!------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------FILTER----------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------->   
+
+  <!-- STUDENT INFO ACCESS HEADER CARD --> 
+        <div class="masterlist-card-box">
+          <h2 class="masterlist-card-title">APPLICANTS</h2>
+          <hr class="masterlist-card-divider" />
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Search by name or ID Number">
+          </div>
+
+  
+          <!-- Filter Section -->
+          <div class="masterlist-filter">
+            <div class="custom-select" data-title="COURSE">
+              <button type="button" class="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="select-value">Course</span>
+                <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="select-menu" role="listbox">
+                <li class="select-title">COURSES</li>
+                <li class="select-option" role="option" data-value="BSIT">Bachelor of Science in Information Technology</li>
+                <li class="select-option" role="option" data-value="BSCRIM">Bachelor of Science in Criminology </li> 
+                <li class="select-option" role="option" data-value="BSA">Bachelor of Science in Accountancy</li>    
+                <li class="select-option" role="option" data-value="BSED">Bachelor of Science in Elementary Education</li>    
+                <li class="select-option" role="option" data-value="BSHM">Bachelor of Science in Hospitality Management</li>   
+                <li class="select-option" role="option" data-value="BSTM">Bachelor of Science in Tourism Management</li>
+                <li class="select-option" role="option" data-value="BSP">Bachelor of Science in Psychology</li> 
+                <li class="select-option" role="option" data-value="BSEE">Bachelor in Secondary Education Major in English</li>    
+                <li class="select-option" role="option" data-value="BAFA">Bachelor of Business Administration Major in  Financial Management</li>    
+                <li class="select-option" role="option" data-value="BAMM">Bachelor of Business Administration Major in Marketing Management</li>
+                <li class="select-option" role="option" data-value="BAHRDM">Bachelor of Business Administration Major in HRDM</li>
+
+                <li class="select-title">ACADEMIC STRANDS</li>
+                <li class="select-option" role="option" data-value="ABM">Accountancy and Business Management</li>
+                <li class="select-option" role="option" data-value="STEM">Science, Technology, Engineering, and Mathematics</li> 
+                <li class="select-option" role="option" data-value="HUMSS">Humanities and Social Sciences</li>    
+                <li class="select-option" role="option" data-value="GAS">General Academic Strand</li>    
+                <li class="select-option" role="option" data-value="HE">Home Economics</li>   
+                <li class="select-option" role="option" data-value="ICT">Information and Communication Technology</li>
+              </ul> 
+              <input type="hidden" name="course" value="">
+            </div>
+
+            <div class="custom-select" data-title="YEAR_LEVEL">
+              <button type="button" class="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="select-value">Year Level</span>
+                <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="select-menu" role="listbox">
+                <li class="select-title">YEAR LEVEL</li>
+                <li class="select-option" role="option" data-value="1st Year">1st Year</li>
+                <li class="select-option" role="option" data-value="2nd Year">2nd Year</li>
+                <li class="select-option" role="option" data-value="3rd Year">3rd Year</li>
+                <li class="select-option" role="option" data-value="4th Year">4th Year</li>
+
+                <li class="select-title">GRADE LEVEL</li>
+                <li class="select-option" role="option" data-value="Grade 11">Grade 11</li>
+                <li class="select-option" role="option" data-value="Grade 12">Grade 12</li>
+              </ul>
+              <input type="hidden" name="year_level" value="">
+            </div>
+
+            <div class="masterlist-filter-btn">
+              <span>Filter</span>
+              <i class="fa-solid fa-caret-down" id="filterArrow"></i>
+            </div>
+
+            <div class="filter-icons">
+              <span class="material-symbols-outlined filter-icon" id="SortmasterlistBtn" aria-hidden="true">filter_list</span>
+              <span class="material-symbols-outlined filter-icon" id="downloadmasterlistBtn" aria-hidden="true">download</span>
+            </div>
+        </div>
+
+          <!-- FILTER MODAL -->
+          <div class="masterlist-filter-modal" id="FiltermasterlistModal" style="display: none;">
+            <div class="masterlist-filter-modal-content">
+              <i class="fa-solid fa-xmark masterlist-filter-modal-close" onclick="closeFilterModal()"></i>
+              <div class="masterlist-filter-modal-title">Filtered Options</div>
+
+              <div class="filter-row">
+                <label for="sectionFilter">Section</label>
+                <div class="select-wrapper">
+                  <select id="sectionFilter">
+                    <option value="">All Sections</option>
+                    <option value="A">Section A</option>
+                    <option value="B">Section B</option>
+                    <option value="C">Section C</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="filter-row">
+                <label for="statusFilter">Status</label>
+                <div class="select-wrapper">
+                  <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Irregular">Irregular</option>
+                  </select>
+                </div>
+              </div>
+
+              <button onclick="applyFilters()">Apply Filters</button>
+            </div>
+          </div>
+
+
+
+                    <!-- SORT MODAL -->
+          <div class="masterlist-sort-modal" id="SortmasterlistModal" style="display: none;">
+            <div class="masterlist-sort-modal-content">
+              <i class="fa-solid fa-xmark masterlist-sort-modal-close" onclick="closeSortModal('SortmasterlistModal')" aria-label="Close"></i>
+              <div class="masterlist-sort-modal-title">SORT BY</div>
+
+              <ul class="sort-options">
+                <li data-value="nameAsc">Name (A → Z)</li>
+                <li data-value="nameDesc">Name (Z → A)</li>
+                <li data-value="Student_ID">ID Number</li>
+                <li data-value="Status">Status</li>
+                <li data-value="Section">Section</li>
+              </ul>
+            </div>
+          </div> 
+
+
+
+            <!-- DOWNLOAD/EXPORT MODAL -->
+            <div class="masterlist-exports-modal" id="downloadmasterlistModal" style="display: none;">
+              <div class="masterlist-export-modal-content">
+                <i class="fa-solid fa-xmark masterlist-export-modal-close" onclick="closeExportModal('downloadmasterlistModal')" aria-label="Close"></i>
+                <div class="masterlist-export-modal-title">EXPORT AS</div>
+                <div class="masterlist-export-modal-options">
+                  <label><input type="radio" name="downloadFormat" value="PDF"> PDF</label>
+                  <label><input type="radio" name="downloadFormat" value="Excel"> Excel</label>
+                  <label><input type="radio" name="downloadFormat" value="Print"> Print</label>
+                </div>
+                <button class="masterlist-export-modal-btn" onclick="downloadmasterlist()">Export</button>
+              </div>
+            </div>
+          </div>
+
+<!------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------TABLE----------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------->   
+ 
+
+  <div class="admission_table_container">
+  <div class="table-wrapper2">
+    <table class="applicants_table" id="Admission_table1">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>LEVEL</th>
+          <th>COURSE / STRAND</th>
+          <th>YEAR LEVEL</th>
+          <th>STATUS</th>
+          <th>ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Repeat rows for demo -->
+        <tr class="Admission_table-content">
+          <td data-label="Name:">John Doe</td>
+          <td data-label="Level:">Grade 11</td>
+          <td data-label="Course:">STEM</td>
+          <td data-label="Year Level:">1st Year</td>
+          <td data-label="Status:">Enrolled</td>
+          <td data-label="Action:">
+          <a href="Admission_student_profile.html" class="action_view_button" aria-label="View details">
+          <i class="fa-solid fa-eye"></i>
+          </a>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name:">Jane Smith</td>
+          <td data-label="Level:">Grade 12</td>
+          <td data-label="Course:">ABM</td>
+          <td data-label="Year Level:">12</td>
+          <td data-label="Status:">Pending</td>
+          <td data-label="Action:">
+          <a href="Admission_student_profile.html" class="action_view_button" aria-label="View details">
+          <i class="fa-solid fa-eye"></i>
+          </a>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name:">John Doe</td>
+          <td data-label="Level:">Grade 11</td>
+          <td data-label="Course:">BSBA (Major in Human Resources Development Management)</td>
+          <td data-label="Year Level:">11</td>
+          <td data-label="Status:">Enrolled</td>
+          <td data-label="Action:">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name:">Jane Smith</td>
+          <td data-label="Level:">COLLEGE</td>
+          <td data-label="Course:">BSBA (Major in Human Resources Development Management)</td>
+          <td data-label="Year Level:">4th YEAR</td>
+          <td data-label="Status:">Pending</td>
+          <td data-label="Action:">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name:">John Doe</td>
+          <td data-label="Level:">Grade 11</td>
+          <td data-label="Course:">STEM</td>
+          <td data-label="Year Level:">11</td>
+          <td data-label="Status:">Enrolled</td>
+          <td data-label="Action:">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name:">Jane Smith</td>
+          <td data-label="Level:">Grade 12</td>
+          <td data-label="Course:">ABM</td>
+          <td data-label="Year Level:">12</td>
+          <td data-label="Status:">Pending</td>
+          <td data-label="Action:">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+                <tr class="Admission_table-content">
+          <td data-label="Name:">John Doe</td>
+          <td data-label="Level:">Grade 11</td>
+          <td data-label="Course:">STEM</td>
+          <td data-label="Year Level:">11</td>
+          <td data-label="Status:">Enrolled</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name:">Jane Smith</td>
+          <td data-label="Level:">Grade 12</td>
+          <td data-label="Course:">ABM</td>
+          <td data-label="Year Level:">12</td>
+          <td data-label="Status:">Pending</td>
+          <td data-label="Action:">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+                <tr class="Admission_table-content">
+          <td data-label="Name">John Doe</td>
+          <td data-label="Level">Grade 11</td>
+          <td data-label="Course">STEM</td>
+          <td data-label="Year Level">11</td>
+          <td data-label="Status">Enrolled</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name">Jane Smith</td>
+          <td data-label="Level">Grade 12</td>
+          <td data-label="Course">ABM</td>
+          <td data-label="Year Level">12</td>
+          <td data-label="Status">Pending</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+                <tr class="Admission_table-content">
+          <td data-label="Name">John Doe</td>
+          <td data-label="Level">Grade 11</td>
+          <td data-label="Course">STEM</td>
+          <td data-label="Year Level">11</td>
+          <td data-label="Status">Enrolled</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name">Jane Smith</td>
+          <td data-label="Level">Grade 12</td>
+          <td data-label="Course">ABM</td>
+          <td data-label="Year Level">12</td>
+          <td data-label="Status">Pending</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+                <tr class="Admission_table-content">
+          <td data-label="Name">John Doe</td>
+          <td data-label="Level">Grade 11</td>
+          <td data-label="Course">STEM</td>
+          <td data-label="Year Level">11</td>
+          <td data-label="Status">Enrolled</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name">Jane Smith</td>
+          <td data-label="Level">Grade 12</td>
+          <td data-label="Course">ABM</td>
+          <td data-label="Year Level">12</td>
+          <td data-label="Status">Pending</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+                <tr class="Admission_table-content">
+          <td data-label="Name">John Doe</td>
+          <td data-label="Level">Grade 11</td>
+          <td data-label="Course">STEM</td>
+          <td data-label="Year Level">11</td>
+          <td data-label="Status">Enrolled</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="Admission_table-content">
+          <td data-label="Name">Jane Smith</td>
+          <td data-label="Level">Grade 12</td>
+          <td data-label="Course">ABM</td>
+          <td data-label="Year Level">12</td>
+          <td data-label="Status">Pending</td>
+          <td data-label="Action">
+            <button class="action_view_button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+    
+       <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+    </div>
+  </div>
+</main>
+
+
+
+</body>
+ <script src="dashboard.js"></script>
+ <script src="masterlist.js"></script>
+</html>

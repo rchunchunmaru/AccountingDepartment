@@ -1,0 +1,137 @@
+.admission_table_container {
+  max-height: 485px; 
+  width: 100%; 
+  overflow-y: auto;
+  overflow-x: auto;
+  display: block;
+  background-color: white;
+    max-width: var(--profile-card-max-width);
+  margin: 0 auto;
+ padding: 10px;
+  
+}
+
+.table-wrapper2 {
+  max-height: 350px;
+  overflow-y: scroll !important;  /* always show vertical scrollbar */
+  overflow-x: auto;
+  scrollbar-width: auto;          /* for Firefox */
+  scrollbar-color: var(--primary-color) #f0f0f0;  /* optional: color customization */
+}
+
+.applicants_table {
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-main);
+  border-collapse: collapse; 
+ overflow: visible;
+ text-align:center;
+ font-weight:500;
+ padding: 10px;
+ margin:0 auto;
+}
+
+.main-content .applicants_table th {
+  position: sticky; 
+  top: 0;           
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: var(--text-xxsmall);
+  padding: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 2;   
+  white-space: nowrap;
+ 
+}
+
+.main-content .applicants_table td {
+  background: #ffffff;
+  color: var(--primary-color);
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: clamp(0.5rem, 1.2vw, var(--text-xxsmall));
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Remove bottom border from the last row (optional) */
+.main-content .applicants_table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action Button */
+.action_view_button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--primary-color);
+  font-size: var(--text-xsmall);
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.applicants_table thead th:first-child {
+  border-top-left-radius: var(--border-radius);
+
+}
+
+.applicants_table thead th:last-child {
+  border-top-right-radius:var(--border-radius); 
+
+}
+
+/*-------------------MOBILE RESPONSIVE--------------------*/
+
+@media (max-width: 768px) {
+  .main-content .applicants_table {
+    border: none;
+    width: 100%;
+  }
+
+  .main-content .applicants_table thead {
+    display: none; /* Hide table header on small screens */
+  }
+
+  .main-content .applicants_table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .main-content .applicants_table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+    font-size: var(--text-xsmall);
+    border-bottom: 1px solid #eee;
+  }
+
+  .main-content .applicants_table td:last-child {
+    border-bottom: none;
+  }
+
+  .main-content .applicants_table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--primary-color);
+    flex: 0 0 40%;
+    text-transform: capitalize;
+  }
+}

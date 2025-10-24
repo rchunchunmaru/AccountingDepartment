@@ -1,0 +1,162 @@
+/*-------------------BASE--------------------*/
+
+.main-content .Admission_Student_Regform {
+  background: #fff;
+  border-radius: var(--border-radius);
+  padding: clamp(16px, 3vw, 24px);
+  border: 1px solid #dfe6ec;
+  box-shadow: var(--primary-shadow);
+  width: 100%;
+  max-width: var(--profile-card-max-width);
+  margin-inline: auto;
+  margin-bottom:var(--v-space);
+}
+.main-content .Admission_Student_Regform_terms {
+  width: 100%;
+  max-width: var(--profile-card-max-width);
+  margin-inline: auto;
+  margin-bottom:var(--v-space);
+}
+
+
+
+
+/*-------------------ORANGE NOTE--------------------*/
+.Admission_form-container_orange {
+  background:#f1c40f;
+  color: var(--primary-color);
+   box-shadow: var(--primary-shadow);
+  border-radius: var(--border-radius);
+  border:none;
+  padding:var(--v-space);
+  width: 100%;
+  max-width: var(--profile-card-max-width);
+  margin-inline: auto;
+  margin-bottom:var(--v-space);
+}
+
+
+
+.Admission_note {
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-xsmall);
+  line-height: 1.4;
+  text-align: justify;
+}
+
+
+/*-------------------NOTES--------------------*/
+.main-content .Admission_form-container {
+  color: var(--primary-color);
+  width: 100%;
+  max-width: var(--profile-card-max-width);
+  margin-inline: auto;
+  margin-bottom:var(--v-space);
+  display: flex;
+  justify-content: center;
+}
+
+
+.Admission_note .note-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* space between icon and text */
+}
+
+.Admission_note .note-icon {
+  width: 16px;   /* adjust size as needed */
+  height: 13px;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/*-------------REQUIRED * --------------------*/
+.input_required {
+  color:var(--secondary-highlight);
+  margin-left:2px;
+}
+
+/*-------------------HR-------------------------*/
+
+.HR_ADD {
+  border: none; /* Remove default hr border */
+  border-top: 1px solid var(--primary-color); /* Correct border-top syntax */
+  height: 1px;
+  background-color: var(--primary-color); 
+  margin-top: var(--v-space);
+  margin-bottom: var(--v-space);
+  width: 100%;
+  }
+
+
+/*-------------------BUTTON----------------------*/
+
+.admission_submit-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top:7px;
+}
+
+.main-content .admission_submit-btn:hover {
+  background: #0056a3;
+}
+
+
+
+
+
+
+
+/*------------RESPONSIVENESS------------------*/
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .main-content .Admission_Student_Regform {
+    margin-bottom:30px;
+  }
+
+
+  /*-------------------ORANGE NOTE--------------------*/
+.Admission_form-container_orange {
+height: 100px;
+ 
+}
+
+  .main-content .Admission_Student_Regform_terms {
+    padding: 0 12px;
+    margin-bottom:var(--v-space);
+
+  }
+
+
+
+  .Admission_note .note-icon {
+    width: 14px;
+    height: 12px;
+  }
+
+    .Admission_note {
+    font-size: var(--text-xsmall); /* Adjust this as well */
+  }
+
+
+  .HR_ADD {
+    margin-top:var(--v-space);
+    margin-bottom:var(--v-space);
+  }
+
+}

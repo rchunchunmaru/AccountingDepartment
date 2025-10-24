@@ -1,0 +1,7 @@
+.scrollbar_wrapper {
+  max-height: 350px;
+  overflow-y: scroll !important;  /* always show vertical scrollbar */
+  overflow-x: auto;
+  scrollbar-width: auto;          /* for Firefox */
+  scrollbar-color: var(--primary-color) #f0f0f0;  /* optional: color customization */
+}
