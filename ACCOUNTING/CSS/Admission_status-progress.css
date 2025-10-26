@@ -1,0 +1,91 @@
+/* === Base Tracker === */
+.ADD_STATUS-TRACKER {
+  width: 100%;
+  max-width: var(--profile-card-max-width);
+  overflow-x: auto;
+  padding: clamp(5px, 2vw, 10px);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Stepper row */
+.ADD_stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(2px, 1vw, 1px); 
+  max-width: var(--profile-card-max-width);
+}
+
+/* Each step: icon + label */
+.ADD_step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+}
+
+/* Connecting line */
+.ADD_line {
+  flex: none;
+  width: clamp(30px, 8vw, 70px); 
+  height: clamp(4px, 0.8vw, 10px);
+  background: #70d32f;
+  border-radius: 999px;
+  margin: 0 auto clamp(1px, 2vw, 20px);
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+/* Icon circle */
+.ADD_icon {
+  width: clamp(40px, 10vw, 70px);
+  height: clamp(40px, 10vw, 70px);
+  border-radius: 50%;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 3vw, 2.75rem);
+  border: clamp(2px, 0.5vw, 4px) solid var(--primary-color);
+}
+
+/* Label under icon */
+.ADD_text1 {
+  margin-top: clamp(5px, 2vw, 15px);
+  text-align: center;
+  font-size: clamp(8px, 2vw, 10px);
+  max-width: clamp(60px, 20vw, 100px);
+  word-wrap: break-word;
+  color: var(--primary-color, #3498db);
+  font-weight: bold;
+}
+@media (max-width: 768px),(max-width: 480px) {
+  .ADD_STATUS-TRACKER {
+    justify-content: flex-start;
+    scroll-behavior: smooth; /* Optional: for smoother scroll if you're scrolling manually */
+  }
+
+  .ADD_line {
+  flex: none;
+  width: clamp(30px, 8vw, 70px); 
+  height: clamp(4px, 0.8vw, 13px);
+  background: #70d32f;
+  border-radius: 999px;
+  margin: 0 auto clamp(1px, 2vw, 20px);
+  margin-left: 2px;
+  margin-right: 2px;
+    margin-bottom: 20px;
+}
+
+.ADD_text1 {
+  margin-top: clamp(5px, 2vw, 20px);
+  text-align: center;
+  font-size: clamp(6px, 1vw, 4px);
+  max-width: clamp(60px, 20vw, 100px);
+  word-wrap: break-word;
+  color: var(--primary-color, #3498db);
+  font-weight: bold;
+}
+
+}

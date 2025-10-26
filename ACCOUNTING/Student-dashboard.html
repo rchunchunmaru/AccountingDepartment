@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary The Queen College of Quezon City</title>
+    <link rel="stylesheet" href="CSS/dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <!-- PNG favicons for specific sizes -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
+    <!-- Apple Touch Icon for iOS devices -->
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" sizes="180x180">
+    <!-- Microsoft Windows Tiles -->
+    <link rel="android-chrome-512x512" type="image/png" href="/assets/images/android-chrome-512x512.png" sizes="512x512">
+    <link rel="android-chrome-192x192" type="image/png" href="/assets/images/android-chrome-192x192.png" sizes="192x192">
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+       <link rel="stylesheet" href="CSS/Admission_student_dashboard.css"/>
+       <link rel="stylesheet" href="CSS/Admission_status-progress.css"/>
+
+  </head>
+<body>
+    <section class="navbar">
+      <div class="nav-content">
+        <div class="mqc-logo-box">
+          <img src="/assets/images/mqc-logo.png" alt="MQCQC logo" />
+          <h3>MARY THE QUEEN COLLEGE OF QUEZON CITY</h3>
+        </div>
+        <button class="sidebar-toggle" aria-label="Toggle Dashboard Sudebar">
+          <i class="fa-solid fa-bars"></i>
+          </i>
+        </button>
+      </div>
+    </section>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="/assets/images/personImage.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Name</h4>
+                        <span>name@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h5>User Dashboard</h5>
+                    <ul>
+                        <li><a href="Admission_student_view_profile.html"><i class="fa-solid fa-file-invoice-dollar"></i> Dashboard</a></li>
+                        <li><a href="Admission_student_view_profile.html"><i class="fas fa-user"></i> View Profile</a></li>
+                        <li class="has-submenu">
+                          <a href="#" class="submenu-toggle">
+                            <i class="fa-solid fa-money-check"></i> Bills and Payment 
+                            <i class="fa-solid fa-caret-down"></i>
+                          </a>
+                          <ul class="sub-menu">
+                            <li><a href="#"><i class="fa-solid fa-credit-card"></i> Make Payment</a></li>
+                            <li><a href="#"><i class="fa-solid fa-receipt"></i> Transaction History</a></li>
+
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h5>MQCQC Services</h5>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+
+<!----------------------------------------------------ACCOUNTING--------------------------------------------------------->
+                          <li class="has-submenu">
+                          <a href="#" class="submenu-toggle">
+                            <i class="fa-solid fa-calculator"></i>Accounting 
+                          
+                          </a>
+                          <ul class="sub-menu">
+                            
+                          </ul>
+                        </li>
+<!----------------------------------------------------ACCOUNTING--------------------------------------------------------->
+                        <li><a href="#"><i class="fa-solid fa-building-columns"></i></i> Admission </a></li>
+                        <li><a href="#"><i class="fas fa-address-book"></i> Registrar</a></li>
+                        <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                        <li><a href="#"><i class="fa-solid fa-gears"></i>TESDA</a></li>
+                        <li><a href="#"><i class="fas fa-id-card"></i> ID Section</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section nav-bottom">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-panel"></div>
+        </aside>
+
+
+                 <!-- MAIN CONTENT -->
+         <main class="main-content">
+      <div class="breadcrumb">
+        <span><i class="fas fa-home"></i> User</span>
+        <span>|</span>
+        <span>Student Applicant</span>
+        <!-- Notification Icon -->
+        <i class="fa-solid fa-bell" id="myreq-notificationBtn" style="cursor:pointer;"></i>
+      </div>
+
+  <!-- Notifications modal-->
+  <div id="myreq-notificationModal" class="myreq-modal">
+    <div class="myreq-modal-content" id="myreq-notificationContent">
+      <div class="myreq-modal-controls">
+        <span class="myreq-control-btn" id="myreq-toggleModalState"><i class="fas fa-expand"></i></span>
+      </div>
+      <div class="myreq-card myreq-card-header">
+        <h2>NOTIFICATIONS</h2>
+        <hr class="myreq-modal-divider"/>
+        <p class="myreq-subtext">In this section, you can view transaction notifications and updates <br> on your requested transaction.</p>
+      </div>
+      <div class="myreq-card">
+        <div class="myreq-table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Content</th>
+                <th>Date & Time</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <td>Gcash</td>    
+                <td>May 23, 2025 16:03</td>
+                <td>
+                  <div class="myreq-actions">
+                    <i class="fas fa-eye myreq-viewBtn"
+                       data-title="UPDATE"
+                       data-message="You can check overall Details of the already been succeeded."></i>
+                    <i class="fas fa-trash"></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>walk in</td>
+                <td>May 23, 2025 16:03</td>
+                <td>
+                  <div class="myreq-actions">
+                    <i class="fas fa-eye myreq-viewBtn"
+                       data-title="UPDATE"
+                       data-message="You can check overall Details of the already been succeeded."></i>
+                    <i class="fas fa-trash"></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Cash</td>
+                <td>May 23, 2025 16:03</td>
+                <td>
+                  <div class="myreq-actions">
+                    <i class="fas fa-eye myreq-viewBtn"
+                       data-title="UPDATE"
+                       data-message="You can check overall Details of the already been succeeded."></i>
+                    <i class="fas fa-trash"></i>
+                  </div>
+                </td>
+                </td>
+              </tr>
+              <!-- ... -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification detail modal -->
+  <div id="myreq-detailModal" class="myreq-modal myreq-detail-modal">
+    <div class="myreq-modal-content myreq-detail-box">
+      <span class="myreq-control-btn" id="myreq-closeDetail"><i class="fas fa-times"></i></span>
+      <h3 id="myreq-detailTitle"></h3>
+      <p id="myreq-detailMessage"></p>
+    </div>
+  </div>
+          
+        <div class="profile-card">
+          <div class="profile-left">
+            <div class="profile-img">
+              <div class="circle no-image" id="profileCircle">
+                <!-- Image will be inserted here via JavaScript -->
+              </div>
+              <input type="file" id="uploadImg" accept="image/*" style="display:none;">
+              <a href="#" class="btn" id="viewProfileBtn">View ID</a>
+            </div>
+            <div class="profile-text">
+              <h2 id="profileName" data-field="fullName">NAME NAME NAME</h2>
+              <p id="profileRole" data-field="role">Applicant</p>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="detail">
+              <i class="fas fa-user"></i> 
+              <span id="profileGsuite" data-field="gsuiteAccount">name@mqcqc.ph.education</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-envelope"></i> 
+              <span id="profileEmail" data-field="email">name@gmail.com</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-phone"></i> 
+              <span id="profilePhone" data-field="phone">09******** / 09********</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-map-marker-alt"></i> 
+              <span id="profileAddress" data-field="profileAddress">44 Dupax St, Commonwealth, Quezon City</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL -->
+        <div class="modal" id="profileModal">
+          <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h3>Student Profile</h3>
+            <img id="modalImg" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile Picture">
+          </div>
+        </div>
+
+
+            <h3 class="section-title" id="userDetailsTitle">Transaction Details</h3>
+
+<!-------------------------------------------STATUS PROGRESS ------------------------------------------->
+<div class="ADD_STATUS-TRACKER">
+  <div class="ADD_stepper">
+
+        <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-file-pen"></i></div>
+      <div class="ADD_text1">GENERAL REQUIREMENTS</div>
+    </div>
+    <div class="ADD_line"></div>
+
+
+    <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-hourglass-start"></i></div>
+      <div class="ADD_text1">CHECKING APPLICATION</div>
+    </div>
+    <div class="ADD_line"></div>
+
+        <div class="ADD_step">
+        <div class="ADD_icon"><i class="fa-solid fa-user-check"></i></div>
+        <div class="ADD_text1">APPROVED APPLICATION</div>
+      </div>
+      <div class="ADD_line"></div>
+
+    <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+      <div class="ADD_text1">PROCEED TO PAYMENT</div>
+    </div>
+    <div class="ADD_line"></div>
+
+        <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-clipboard-list"></i></div>
+      <div class="ADD_text1">CHECKING REQUIREMENTS</div>
+    </div>
+    <div class="ADD_line"></div>
+
+    <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-address-card"></i></div>
+      <div class="ADD_text1">CONFIRMED</div>
+    </div>
+
+  </div>
+</div>
+  <!-------------------------------------------STATUS TABLE ------------------------------------------->
+      
+
+  <div class="ADD_container">
+        <!-- Backdrop for modal -->
+        <div class="ADD_remarks-backdrop" id="remarksBackdrop"></div>
+
+            <!-- Remarks Modal -->
+            <div class="ADD_remarks-panel" id="remarksPanel">
+                <div class="ADD_remarks-header">
+                    <h2>REMARKS</h2>
+                    <button class="ADD_close-btn" id="closeRemarks">&times;</button>
+                </div>
+                <div class="ADD_remarks-content">
+                    <div class="ADD_remarks-field">
+                        <label class="rmk-label">SENT BY:<span class="Evaluator"> EMPLOYEE NAME</span></label>
+                    </div>
+                    <div class="ADD_remarks-field">
+                        <label class="rmk-label">DATE: <span class="Evaluator"> Date</label>
+                    </div>
+                    <div class="ADD_remarks-field">
+                        <label class="rmk-label">REMARKS:</label>
+                        <textarea class="ADD_remarks-textarea" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Table -->
+            <div class="ADD_table-container" id="tableContainer">
+                <table class="ADD_application-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>DATE FILED</th>
+                            <th>PAYMENT METHOD</th>
+                            <th>AMOUNT</th>
+                            <th>DETAILS</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="ADD_application-row">
+                            <td class="ADD_app-id">
+                                    <span class="ADD_date-value">161007</span>
+                            </td>
+
+                            <td class="ADD_app-id">
+                                    <span class="ADD_date-value">01/24/2025</span>
+                            </td>
+                            
+                            <td class="ADD_app-id">
+                                    <span class="ADD_date-value">GCASH</span>
+                                
+                            </td>
+
+                            <td class="ADD_app-id">
+                                    <span class="ADD_date-value">3,350PHP</span>
+                            </td>
+                            <td class="ADD_app-details"> 
+                                <div class="ADD_detail-line"><span class="ADD_label">Paymen for:<br></span>Tuition Fee<br>2nd semester 2025</div>
+                            </td>
+                            <td class="ADD_status-cell">
+                                <span class="ADD_status-badge ADD_enrolled">COMPLETED</span>
+                            </td>
+                            <td class="ADD_action-cell">
+                                <button class="ADD_action-btn ADD_remarks-btn" id="showRemarks">Remarks</button>
+                               <a href="#" class="ADD_action-link download-link">Download Registration Form</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        </main>
+    
+            
+</body>
+
+<script>
+document.querySelectorAll(".ADD_app-id").forEach(appId => {
+  appId.addEventListener("click", function () {
+    this.parentElement.classList.toggle("ADD_open");
+  });
+});
+
+
+
+</script>
+ <script src="JS/dashboard.js"></script>
+ <script src="JS/Admission_student_dashboard.js"></script>
+</html>
