@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary The Queen College of Quezon City</title>
+    <link rel="stylesheet" href="../CSS/Admin-dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <!-- PNG favicons for specific sizes -->
+    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
+    <!-- Apple Touch Icon for iOS devices -->
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" sizes="180x180">
+    <!-- Microsoft Windows Tiles -->
+    <link rel="android-chrome-512x512" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512">
+    <link rel="android-chrome-192x192" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192">
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+  </head>
+
+<body>
+    <section class="navbar">
+      <div class="nav-content">
+        <div class="mqc-logo-box">
+          <img src="../images/mqc-logo.png" alt="MQCQC logo" />
+          <h3>MARY THE QUEEN COLLEGE OF QUEZON CITY</h3>
+        </div>
+        <button class="sidebar-toggle" aria-label="Toggle Dashboard Sudebar">
+          <i class="fa-solid fa-bars"></i>
+          </i>
+        </button>
+      </div>
+    </section>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="../images/personImage.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Name</h4>
+                        <span>name@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                     <h5>User Dashboard</h5>
+        <ul>
+            <li>
+                <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                  </li>
+                    <li>
+                      <a href="Admin-Make-Payment.html" id="makePaymentLink">
+                      <i class="fa-solid fa-money-check"></i> Make Payment
+                    </a>
+                  </li>
+                  <li>
+                      <a href="#" id="transactionManagementLink">
+                      <i class="fa-solid fa-money-check"></i> Transaction Management
+                    </a>
+                  </li>
+                </ul>
+            </div>
+                
+                <div class="nav-section nav-bottom">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-panel"></div>
+        </aside>
+
+            <!-- MAIN CONTENT -->
+        <main class="main-content">
+          <div class="breadcrumb">
+            <span><i class="fas fa-home"></i> ACCOUNTING</span>
+            <span>|</span>
+            <span>Staff</span>
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          
+        <div class="profile-card">
+          <div class="profile-left">
+            <div class="profile-img">
+              <div class="circle no-image" id="profileCircle">
+                <!-- Image will be inserted here via JavaScript -->
+              </div>
+              <input type="file" id="uploadImg" accept="image/*" style="display:none;">
+              <a href="#" class="btn" id="viewProfileBtn">View ID</a>
+            </div>
+            <div class="profile-text">
+              <h2 id="profileName" data-field="fullName">NAME NAME NAME</h2>
+              <p id="profileRole" data-field="role">Applicant</p>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="detail">
+              <i class="fas fa-user"></i> 
+              <span id="profileGsuite" data-field="gsuiteAccount">name@mqcqc.ph.education</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-envelope"></i> 
+              <span id="profileEmail" data-field="email">name@gmail.com</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-phone"></i> 
+              <span id="profilePhone" data-field="phone">09******** / 09********</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-map-marker-alt"></i> 
+              <span id="profileAddress" data-field="profileAddress">44 Dupax St, Commonwealth, Quezon City</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL -->
+        <div class="modal" id="profileModal">
+          <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h3>Student Profile</h3>
+            <img id="modalImg" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile Picture">
+          </div>
+        </div>
+
+        <!-- DASHBOARD ITEM SECTION PART -->
+          <h3 class="section-title" id="userDetailsTitle">Transaction Status</h3>
+          <!-- ✅ Add this after the heading -->
+<div class="status-cards">
+  <!-- your Pending / Completed / Rejected cards here -->
+</div>
+
+<!-- POPUP MODAL FOR STATUS DETAILS -->
+<div class="modal" id="statusModal">
+  <div class="modal-content large">
+    <span id="closeStatusModal">&times;</span>
+    <h3 id="statusTitle">Status Details</h3>
+    
+    <div class="status-table-container">
+      <table class="status-table" id="statusTable">
+        <thead>
+          <tr>
+            <th>Pending Transaction</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="statusTableBody">
+          <!-- Rows will be inserted dynamically by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SECONDARY POPUP FOR VIEW ACTION (EYE ICON) -->
+<div class="modal" id="requestModal">
+  <div class="modal-content">
+    <span id="closeRequestModal">&times;</span>
+    <h3>Request Details</h3>
+    <p>Details will be shown here later...</p>
+  </div>
+</div>
+          <!-- TRANSACTION STATUS CARDS -->
+<div class="status-cards">
+  <div class="card status-card" id="pendingCard">
+    <i class="fa-solid fa-hourglass-half"></i>
+    <h4>Pending Request</h4>
+    <p>27</p>
+  </div>
+  <div class="card status-card" id="completedCard">
+    <i class="fa-solid fa-check"></i>
+    <h4>Completed</h4>
+    <p>40</p>
+  </div>
+  <div class="card status-card" id="rejectedCard">
+    <i class="fa-solid fa-xmark"></i>
+    <h4>Rejected Request</h4>
+    <p>8</p>
+  </div>
+</div>
+
+<!-- RECENT ACTIVITY -->
+<div class="recent-activity">
+  <h4>Recent Activity</h4>
+  <ul>
+    <li><i class="fa-solid fa-file"></i> Christian Kilat requested a TOR <span>10 minutes ago</span></li>
+    <li><i class="fa-solid fa-check text-success"></i> Reyna Lee Gayoma diploma request was approved</li>
+    <li><i class="fa-solid fa-xmark text-danger"></i> Jiggs Latoja certificate of grades request was rejected</li>
+  </ul>
+</div>
+
+<!-- STATISTICS -->
+<div class="statistics">
+  <h4>Statistics</h4>
+  <div class="stat-item">
+    <span>SHS Requests</span>
+    <div class="progress"><div class="progress-bar" style="width: 35%"></div></div>
+    <span>35%</span>
+  </div>
+  <div class="stat-item">
+    <span>College Requests</span>
+    <div class="progress"><div class="progress-bar" style="width: 55%"></div></div>
+    <span>55%</span>
+  </div>
+  <div class="stat-item">
+    <span>Completed Today</span>
+    <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+    <span>75%</span>
+  </div>
+</div>
+
+<!-- POPUP MODAL (BLANK FOR NOW) -->
+<div class="modal" id="statusModal">
+  <div class="modal-content">
+    <span id="closeStatusModal">&times;</span>
+    <h3>Status Details</h3>
+    <p>Details will be added here...</p>
+  </div>
+</div>
+
+<!-- THIRD POPUP FOR TRANSACTION DETAILS -->
+<div class="modal" id="transactionDetailsModal">
+  <div class="modal-content large">
+    <span id="closeTransactionModal">&times;</span>
+    <h3>TRANSACTION DETAILS</h3>
+    <p class="school-header">
+      MARY THE QUEEN COLLEGE OF QUEZON CITY<br>
+      Commonwealth Ave. Cr. Rd. 44 Diliman, 1121 Quezon City, NCR Second District, Philippines<br>
+      Non VAT Reg. TIN: 242-588-048-0000 Tel: 434-7192 / 434 - 4480 / 436-4468
+    </p>
+    <div class="transaction-info">
+      <div class="info-group">
+        <p><strong>Program ID:</strong> <span id="programId">1123</span></p>
+        <p><strong>Program:</strong> <span id="programName">Baguio Tour</span></p>
+        <p><strong>Payment Duration:</strong> <span id="paymentDuration">2025-01-25 – 2025-02-25</span></p>
+        <p><strong>Participants:</strong> <span id="participants">All Year Levels</span></p>
+      </div>
+      <div class="info-group">
+         <p><strong>Amount to Pay:</strong> <span id="amountToPay">₱2,500</span></p>
+         <p><strong>Payment Method:</strong> <span id="paymentMethod">G-Cash</span></p>
+         <p><strong>Status:</strong> <span id="transactionStatus">Pending</span></p>
+      </div>
+    </div>
+
+    <h4>DETAILS</h4>
+    <textarea id="detailsText" rows="4" placeholder="Enter remarks..."></textarea>
+
+    <div class="form-actions">
+      <select id="statusSelect">
+        <option value="approved">Approved</option>
+        <option value="pending">Pending</option>
+      </select>
+        <div class="buttons">
+          <button id="rejectTransaction" class="reject-btn">Reject Request</button>
+          <button id="submitTransaction" class="submit-btn">Submit</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOURTH POPUP FOR REJECTION REMARKS -->
+<div class="modal" id="rejectModal">
+  <div class="modal-content large">
+    <span id="closeRejectModal">&times;</span>
+    <h3>REMARKS</h3>
+
+    <div class="remarks-form">
+      <div class="form-row">
+        <label>From:</label>
+        <input type="email" id="rejectFrom" value="employee@mqcqc.edu.ph" readonly>
+      </div>
+      <div class="form-row">
+        <label>Date:</label>
+        <input type="date" id="rejectDate">
+      </div>
+      <div class="form-row">
+        <label>Status:</label>
+        <input type="text" id="rejectStatus" value="Rejected" readonly>
+      </div>
+      <div class="form-row">
+        <label>Program:</label>
+        <select id="rejectProgram">
+          <option>All Programs</option>
+          <option>Baguio Tour</option>
+          <option>SHS Requests</option>
+          <option>College Requests</option>
+        </select>
+      </div>
+
+      <hr>
+
+      <h4>REASON</h4>
+      <div class="reason-buttons">
+        <button class="reason-btn">Incorrect Details</button>
+        <button class="reason-btn">Insufficient Funds</button>
+        <button class="reason-btn">Technical or System Error</button>
+        <button class="reason-btn">Duplicate Transaction</button>
+      </div>
+
+      <h4>FOR REJECTED ONLY</h4>
+      <textarea id="rejectMessage" rows="4" placeholder="Enter rejection message..."></textarea>
+
+      <div class="form-actions">
+        <button id="saveReject" class="submit-btn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIFTH POPUP FOR VIEW-ONLY RECEIPT DETAILS -->
+<div class="modal" id="receiptModal">
+  <div class="modal-content large">
+    <span id="closeReceiptModal">&times;</span>
+    <h3>RECEIPT</h3>
+    <div class="receipt-container">
+      <h4>MARY THE QUEEN COLLEGE OF QUEZON CITY</h4>
+      <p>
+        Commonwealth Ave. Cr. Rd. 44 Diliman, 1121 Quezon City, NCR Second District, Philippines<br>
+        Non VAT Reg. TIN: 242-588-048-0000 Tel: 434-7192 / 434 - 4480 / 436 - 4468
+      </p>
+      <hr>
+
+      <div class="receipt-info">
+        <div class="left">
+          <p><strong>Name:</strong> <span id="receiptName">Sean Patric</span></p>
+          <p><strong>Student Number:</strong> <span id="receiptStudentNo">01001</span></p>
+          <p><strong>Level:</strong> <span id="receiptLevel">College - Bachelor of Science and Technology</span></p>
+          <p><strong>Year Level:</strong> <span id="receiptYear">4th Year</span></p>
+          <p><strong>Payment Method:</strong> <span id="receiptMethod">G-Cash</span></p>
+          <p><strong>Purpose:</strong> <span id="receiptPurpose">Tour 2025</span></p>
+          <p><strong>Total Amount to Pay:</strong> <span id="receiptTotal">10,600</span></p>
+          <p><strong>Amount Paid:</strong> <span id="receiptPaid">10,600</span></p>
+          <p><strong>Balance Due:</strong> <span id="receiptBalance">0</span></p>
+        </div>
+
+        <div class="right">
+          <p><strong>Transaction No:</strong> <span id="receiptTransNo">01211551</span></p>
+          <p><strong>Date:</strong> <span id="receiptDate">2025-01-02</span></p>
+          <div class="signature">
+            <br><br>
+            <p class="name">Sean Patrick</p>
+            <p class="title">Authorized Representative</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+            
+</body>
+ <script src="../JS/Admin-dashboard.js"></script>
+</html>

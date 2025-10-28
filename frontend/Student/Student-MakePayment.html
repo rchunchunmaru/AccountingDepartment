@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary The Queen College of Quezon City</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css" />
+    <link rel="stylesheet" href="../CSS/Admission_graph.css" />
+    <link rel="stylesheet" href="../CSS/Admission_status-progress.css" />
+    <link rel="stylesheet" href="../CSS/Admission_student-form.css" />
+    <link rel="stylesheet" href="../CSS/Admission_student_dashboard.css" />
+    <link rel="stylesheet" href="../CSS/Error_message.css" />
+    <link rel="stylesheet" href="../CSS/Font_Base.css" />
+    <link rel="stylesheet" href="../CSS/input.css" />
+    <link rel="stylesheet" href="../CSS/masterlist.css" />
+    <link rel="stylesheet" href="../CSS/Student-Historypayment.css" />
+    <link rel="stylesheet" href="../CSS/Wrapper.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <!-- PNG favicons for specific sizes -->
+    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
+    <!-- Apple Touch Icon for iOS devices -->
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" sizes="180x180">
+    <!-- Microsoft Windows Tiles -->
+    <link rel="android-chrome-512x512" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512">
+    <link rel="android-chrome-192x192" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192">
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    
+    <link rel="stylesheet" href="../CSS/Font_Base.css">
+    <link rel="stylesheet" href="../CSS/Admission_student-form.css">
+    <link rel="stylesheet" href="../CSS/input.css">
+    <link rel="stylesheet" href="../CSS/Error_message.css">
+    <link rel="stylesheet" href="../CSS/displayform.css">
+    <link rel="stylesheet" href="../CSS/Wrapper.css">
+  </head>
+
+<body>
+    <section class="navbar">
+      <div class="nav-content">
+        <div class="mqc-logo-box">
+          <img src=../images/mqc-logo.png" alt="MQCQC logo" />
+          <h3>MARY THE QUEEN COLLEGE OF QUEZON CITY</h3>
+        </div>
+        <button class="sidebar-toggle" aria-label="Toggle Dashboard Sudebar">
+          <i class="fa-solid fa-bars"></i>
+          </i>
+        </button>
+      </div>
+    </section>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="../images/personImage.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Name</h4>
+                        <span>name@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h5>User Dashboard</h5>
+                    <ul>
+                      <li><a href="index.html"><i class="fa-solid fa-file-invoice-dollar"></i> Dashboard</a></li>
+                      <li><a href="Student-BasicInfo.html"><i class="fas fa-user"></i> View Profile</a></li>
+                      <li class="has-submenu">
+                          <a href="#" class="submenu-toggle">
+                            <i class="fa-solid fa-money-check"></i> Bills and Payment 
+                            <i class="fa-solid fa-caret-down"></i>
+                          </a>
+                          <ul class="sub-menu">
+                            <li><a href="#"><i class="fa-solid fa-credit-card"></i> Make Payment</a></li>
+                            <li><a href="Student-Historypayment.html"><i class="fa-solid fa-receipt"></i> Transaction History</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h5>MQCQC Services</h5>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fa-solid fa-calculator"></i></i> Accounting</a></li>
+                        <li><a href="#"><i class="fa-solid fa-building-columns"></i> Admission</a></li>
+                        <li><a href="#"><i class="fas fa-address-book"></i> Registrar</a></li>
+                        <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                        <li><a href="#"><i class="fa-solid fa-gears"></i>TESDA</a></li>
+                        <li><a href="#"><i class="fas fa-id-card"></i> ID Section</a></li>
+                        
+                        
+                <div class="nav-section nav-bottom">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-panel"></div>
+        </aside>
+
+            <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+
+         <div class="breadcrumb">
+            <span><i class="fas fa-home"></i> User</span>
+            <span>|</span>
+            <span>Student Applicant</span>
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          
+        <div class="profile-card">
+          <div class="profile-left">
+            <div class="profile-img">
+              <div class="circle no-image" id="profileCircle">
+                <!-- Image will be inserted here via JavaScript -->
+              </div>
+              <input type="file" id="uploadImg" accept="image/*" style="display:none;">
+              <a href="#" class="btn" id="viewProfileBtn">View ID</a>
+            </div>
+            <div class="profile-text">
+              <h2 id="profileName" data-field="fullName">NAME NAME NAME</h2>
+              <p id="profileRole" data-field="role">Applicant</p>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="detail">
+              <i class="fas fa-user"></i> 
+              <span id="profileGsuite" data-field="gsuiteAccount">name@mqcqc.ph.education</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-envelope"></i> 
+              <span id="profileEmail" data-field="email">name@gmail.com</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-phone"></i> 
+              <span id="profilePhone" data-field="phone">09******** / 09********</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-map-marker-alt"></i> 
+              <span id="profileAddress" data-field="profileAddress">44 Dupax St, Commonwealth, Quezon City</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL -->
+        <div class="modal" id="profileModal">
+          <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h3>Student Profile</h3>
+            <img id="modalImg" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile Picture">
+          </div>
+        </div>
+
+<div class="ADD_STATUS-TRACKER">
+  <div class="ADD_stepper">
+
+        <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-file-pen"></i></div>
+      <div class="ADD_text1">GENERAL REQUIREMENTS</div>
+    </div>
+    <div class="ADD_line"></div>
+
+
+    <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-hourglass-start"></i></div>
+      <div class="ADD_text1">CHECKING APPLICATION</div>
+    </div>
+    <div class="ADD_line"></div>
+
+        <div class="ADD_step">
+        <div class="ADD_icon"><i class="fa-solid fa-user-check"></i></div>
+        <div class="ADD_text1">APPROVED APPLICATION</div>
+      </div>
+      <div class="ADD_line"></div>
+
+    <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+      <div class="ADD_text1">PROCEED TO PAYMENT</div>
+    </div>
+    <div class="ADD_line"></div>
+
+        <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-clipboard-list"></i></div>
+      <div class="ADD_text1">CHECKING REQUIREMENTS</div>
+    </div>
+    <div class="ADD_line"></div>
+
+    <div class="ADD_step">
+      <div class="ADD_icon"><i class="fa-solid fa-address-card"></i></div>
+      <div class="ADD_text1">CONFIRMED</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-----------------------------------Application Term & CourseStrand------------------------------------------------------------>     
+<!--------------------------------------- -- SECTION HEADER---------------------------------------------------------------------->
+
+        <h3 class="section-title" id="userDetailsTitle">Payment Transaction</h3>
+
+        <div class="reminder">
+          <h1>Reminder</h1>
+          <p>Ensure all information provided are accurate and complete</p>
+        </div>
+
+        <div class="payment-methods">
+          <h1>Payment Methods</h1>
+          <p><b>BPI: </b>9057 XXXX XXXX | MQCQC BPI</p>
+          <p><b>GCASH NO: </b>09********* | MQCQC USER NAME</p>
+        </div>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------| CONTENT |--------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
+
+
+  <form id="Admission_acc_registration_form">
+   
+        <!-- DASHBOARD ITEM SECTION PART -->
+   <div class="Admission_Student_Regform">
+  <h4 class="section-subtitle">Payment Information</h4>
+
+    <div class="form-grid">
+    <div class="form-group">
+      <label for="campus">CAMPUS<span class="input_required">*</span></label>
+      <select id="campus" name="campus" class="MQCQC QUEZON CITY BRANCH" required>
+          <option value="Sample 1">Sample 1</option>
+          <option value="Sample 2">Sample 2</option>
+          <option value="Sample 3">Sample 3</option>
+          <option value="Sample 4">Sample 4</option>
+          <option value="Sample 5">Sample 5</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="mqcqc_first_name">First Name:<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="mqcqc_first_name">
+    </div>
+    <div class="form-group">
+      <label for="mqcqc_middle_name">Middle Name:<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="mqcqc_middle_name">
+    </div>
+  </div>
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="mqcqc_suffix">Suffix:</label>
+      <select id="mqcqc_suffix" name="suffix" class="form-value1" required>
+          <option value="">Select</option>
+          <option value="Jr.">Jr.</option>
+          <option value="Sr">Sr.</option>
+          <option value="II">II</option>
+          <option value="III">III</option>
+          <option value="others">others</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="mqcqc_sex">Sex:<span class="input_required">*</span></label>
+      <select id="mqcqc_sex" name="sex" class="form-value1" required>
+          <option value="">Select</option>
+          <option value="male">male</option>
+          <option value="female">female.</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="mqcqc_nationality">Nationality:<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="mqcqc_nationality">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="mqcqc_date_of_birth">Date of Birth:<span class="input_required">*</span></label>
+    <input type="date" class="form-value1" id="mqcqc_date_of_birth">
+  </div>
+
+  <div class="form-group">
+    <label for="mqcqc_email_address">Address:<span class="input_required">*</span></label>
+    <input type="email" class="form-value1" id="mqcqc_email_address">
+    <span class="ERROR_MESSAGE00" id="emailError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="mqcqc_email_address">Email Address:<span class="input_required">*</span></label>
+    <input type="email" class="form-value1" id="mqcqc_email_address">
+    <span class="ERROR_MESSAGE00" id="emailError"></span>
+  </div>
+  <div class="form-group">
+    <label for="mqcqc_mobile_no">Mobile No:<span class="input_required">*</span></label>
+    <input type="tel" class="form-value1" id="mqcqc_mobile_no">
+    <span class="ERROR_MESSAGE00" id="mobileError"></span>
+  </div>
+  <div class="form-group">
+    <label for="mqcqc_parent_guardian">Parent/Guardian:<span class="input_required">*</span></label>
+    <input type="text" class="form-value1" id="mqcqc_parent_guardian">
+  </div>
+  <div class="form-group">
+    <label for="mqcqc_emergency_contact_no">Emergency Contact No:<span class="input_required">*</span></label>
+    <input type="tel" class="form-value1" id="mqcqc_emergency_contact_no">
+     <span class="ERROR_MESSAGE00" id="emergencyError"></span>
+  </div>
+<br>
+<br>
+
+  <!---------------------BUTTON---------------------------->
+  <div class="actions">
+      <button class="edit-btn" id="editProfileBtn"><i class="fas fa-edit"></i> Edit</button>
+  </div>
+ </div> 
+</div>
+ </form>
+
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------| MODAL |------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------->
+         
+
+<!-- Confirmation Modal -->
+<div id="confirmationModal" class="ADD_modal">
+  <div class="ADD_content">
+     <div class="ADD_MODAL_HEADER">
+    <h3 class="ADD_header1">Confirmation</h3>
+    <button type="button" class="ADD_close-btn" id="ADD_closeModalBtn">&times;</button>
+    </div>
+   <img src=../images/mqc-logo.png" alt="Modal Background" class="modal-background">
+    <h3 class="ADD_header">Applicant Information</h3>
+    <div class="ADD_layer1">
+      <div class="ADD_input-group1">
+        <label for="surnameDisplay"><strong>Surname:</strong></label>
+        <input type="text" id="surnameDisplay" readonly class="ADD_readonly-input" />
+      </div>
+      <div class="ADD_input-group1">
+        <label for="firstnameDisplay"><strong>First Name:</strong></label>
+        <input type="text" id="firstnameDisplay" readonly class="ADD_readonly-input" />
+      </div>
+      <div class="ADD_input-group1">
+        <label for="middlenameDisplay"><strong>Middle Name:</strong></label>
+        <input type="text" id="middlenameDisplay" readonly class="ADD_readonly-input" />
+      </div>
+      <div class="ADD_input-group1">
+        <label for="suffixDisplay"><strong>Suffix:</strong></label>
+        <input type="text" id="suffixDisplay" readonly class="ADD_readonly-input" />
+      </div>
+    </div>
+
+    <div class="ADD_layer1">
+      <div class="ADD_input-group2">
+        <label for="sexDisplay"><strong>Sex:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="sexDisplay">
+      </div>
+      <div class="ADD_input-group2">
+        <label for="nationalityDisplay"><strong>Nationality:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="nationalityDisplay">
+      </div>
+      <div class="ADD_input-group2">
+        <label for="dobDisplay"><strong>Date of Birth:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="dobDisplay">
+      </div>
+    </div>
+    <br>
+
+    <h3 class="ADD_header">Address</h3>
+    <div class="ADD_layer1">
+      <div class="ADD_input-group2">
+        <label for="houseNoDisplay"><strong>House No:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="houseNoDisplay">
+      </div>
+      <div class="ADD_input-group2">
+        <label for="streetDisplay"><strong>Street:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="streetDisplay">
+      </div>
+      <div class="ADD_input-group2">
+        <label for="barangayDisplay"><strong>Barangay:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="barangayDisplay">
+      </div>
+    </div>
+
+    
+
+    <h3 class="ADD_header">Contact</h3>
+    <div class="ADD_layer1">
+      <div class="ADD_input-group1">
+        <label for="emailDisplay"><strong>Address:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="emailDisplay">
+      </div>
+      <div class="ADD_input-group1">
+        <label for="emailDisplay"><strong>Email Address:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="emailDisplay">
+      </div>
+      <div class="ADD_input-group1">
+        <label for="mobileNoDisplay"><strong>Mobile Number:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="mobileNoDisplay">
+      </div>
+      <div class="ADD_input-group1">
+        <label for="parentGuardianDisplay"><strong>Parent/Guardian:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="parentGuardianDisplay">
+      </div>
+      <div class="ADD_input-group1">
+        <label for="emergencyContactNoDisplay"><strong>Emergency Contact No:</strong></label>
+        <input type="text" readonly class="ADD_readonly-input" id="emergencyContactNoDisplay">
+      </div>
+    </div>
+    <br>
+    
+<br>
+    <div class="ADD_table-wrapper2">
+      <hr class="ADD_custom-hr3">
+
+      <div class="ADD_button-group">
+        <button type="button" class="ADD_FORM_btn1" id="cancelModalBtn">Cancel</button>
+        <button type="button" class="ADD_FORM_btn2" id="FINALconfirmModalBtn">Proceed</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+       
+</body>
+ <script src="../JS/dashboard.js"></script>
+ <script src="../JS/Admission_graph.js"></script>
+ <script src="../JS/Admission_student_dashboard.js"></script>
+ <script src="../JS/dashboard.js"></script>
+ <script src="../JS/masterlist.js"></script>
+ <script src="../JS/Student-Historypayment.js"></script>
+</html>
