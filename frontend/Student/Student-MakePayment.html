@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../CSS/masterlist.css" />
     <link rel="stylesheet" href="../CSS/Student-Historypayment.css" />
     <link rel="stylesheet" href="../CSS/Wrapper.css" />
+    <link rel="stylesheet" href="../CSS/make-payment.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -222,14 +223,16 @@
         <h3 class="section-title" id="userDetailsTitle">Payment Transaction</h3>
 
         <div class="reminder">
-          <h1>Reminder</h1>
+          <h2>Reminder</h2>
           <p>Ensure all information provided are accurate and complete</p>
         </div>
 
         <div class="payment-methods">
-          <h1>Payment Methods</h1>
-          <p><b>BPI: </b>9057 XXXX XXXX | MQCQC BPI</p>
-          <p><b>GCASH NO: </b>09********* | MQCQC USER NAME</p>
+          <h2>Payment Methods</h2>
+          <div>
+            <p><b>BPI: </b>9057 XXXX XXXX | MQCQC BPI</p>
+            <p><b>GCASH NO: </b>09********* | MQCQC USER NAME</p>
+          </div>
         </div>
 <!------------------------------------------------------------------------------------------------------------------------------->
 <!-----------------------------------------------------| CONTENT |--------------------------------------------------------------->
@@ -245,7 +248,31 @@
     <div class="form-grid">
     <div class="form-group">
       <label for="campus">CAMPUS<span class="input_required">*</span></label>
-      <select id="campus" name="campus" class="MQCQC QUEZON CITY BRANCH" required>
+      <select id="campus" name="campus" class="form-value1" required>
+          <option value="Sample 1">Sample 1</option>
+          <option value="Sample 2">Sample 2</option>
+          <option value="Sample 3">Sample 3</option>
+          <option value="Sample 4">Sample 4</option>
+          <option value="Sample 5">Sample 5</option>
+    </select>
+    </div>
+  </div>
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="program">PROGRAM</label>
+      <select id="program" name="program" class="form-value1" required>
+          <option value="Sample 1">Sample 1</option>
+          <option value="Sample 2">Sample 2</option>
+          <option value="Sample 3">Sample 3</option>
+          <option value="Sample 4">Sample 4</option>
+          <option value="Sample 5">Sample 5</option>
+    </select>
+    </div>
+  </div>
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="strand">STRAND</label>
+      <select id="strand" name="strand" class="form-value1" required>
           <option value="Sample 1">Sample 1</option>
           <option value="Sample 2">Sample 2</option>
           <option value="Sample 3">Sample 3</option>
@@ -254,80 +281,95 @@
     </select>
     </div>
     <div class="form-group">
-      <label for="mqcqc_first_name">First Name:<span class="input_required">*</span></label>
-      <input type="text" class="form-value1" id="mqcqc_first_name">
-    </div>
-    <div class="form-group">
-      <label for="mqcqc_middle_name">Middle Name:<span class="input_required">*</span></label>
-      <input type="text" class="form-value1" id="mqcqc_middle_name">
+      <label for="school_year">SCHOOL YEAR</label>
+      <select id="school_year" name="school_year" class="form-value1" required>
+          <option value="Sample 1">Sample 1</option>
+          <option value="Sample 2">Sample 2</option>
+          <option value="Sample 3">Sample 3</option>
+          <option value="Sample 4">Sample 4</option>
+          <option value="Sample 5">Sample 5</option>
+    </select>
     </div>
   </div>
+
   <div class="form-grid">
     <div class="form-group">
-      <label for="mqcqc_suffix">Suffix:</label>
-      <select id="mqcqc_suffix" name="suffix" class="form-value1" required>
-          <option value="">Select</option>
-          <option value="Jr.">Jr.</option>
-          <option value="Sr">Sr.</option>
-          <option value="II">II</option>
-          <option value="III">III</option>
-          <option value="others">others</option>
+      <label for="student_id">STUDENT ID</label>
+      <select id="student_id" name="student_id" class="form-value1" required>
+          <option value="Sample 1">Sample 1</option>
+          <option value="Sample 2">Sample 2</option>
+          <option value="Sample 3">Sample 3</option>
+          <option value="Sample 4">Sample 4</option>
+          <option value="Sample 5">Sample 5</option>
     </select>
     </div>
     <div class="form-group">
-      <label for="mqcqc_sex">Sex:<span class="input_required">*</span></label>
-      <select id="mqcqc_sex" name="sex" class="form-value1" required>
-          <option value="">Select</option>
-          <option value="male">male</option>
-          <option value="female">female.</option>
+      <label for="purpose">PURPOSE</label>
+      <select id="purpose" name="purpose" class="form-value1" required>
+          <option value="Sample 1">Sample 1</option>
+          <option value="Sample 2">Sample 2</option>
+          <option value="Sample 3">Sample 3</option>
+          <option value="Sample 4">Sample 4</option>
+          <option value="Sample 5">Sample 5</option>
     </select>
     </div>
+  </div>
+
+  <hr class="seperator">
+
+  <div class="form-grid">
     <div class="form-group">
-      <label for="mqcqc_nationality">Nationality:<span class="input_required">*</span></label>
-      <input type="text" class="form-value1" id="mqcqc_nationality">
+      <label for="surname">SURNAME<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="surname">
+    </div>
+    <div class="form-group">
+      <label for="first_name">FIRST NAME<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="first_name">
+    </div>
+    <div class="form-group">
+      <label for="middle_name">MIDDLE NAME<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="middle_name">
+    </div>
+    <div class="form-group">
+      <label for="suffix">SUFFIX<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="suffix">
     </div>
   </div>
   <div class="form-group">
-    <label for="mqcqc_date_of_birth">Date of Birth:<span class="input_required">*</span></label>
-    <input type="date" class="form-value1" id="mqcqc_date_of_birth">
-  </div>
-
-  <div class="form-group">
-    <label for="mqcqc_email_address">Address:<span class="input_required">*</span></label>
-    <input type="email" class="form-value1" id="mqcqc_email_address">
-    <span class="ERROR_MESSAGE00" id="emailError"></span>
-  </div>
-
-  <div class="form-group">
-    <label for="mqcqc_email_address">Email Address:<span class="input_required">*</span></label>
-    <input type="email" class="form-value1" id="mqcqc_email_address">
-    <span class="ERROR_MESSAGE00" id="emailError"></span>
-  </div>
-  <div class="form-group">
-    <label for="mqcqc_mobile_no">Mobile No:<span class="input_required">*</span></label>
-    <input type="tel" class="form-value1" id="mqcqc_mobile_no">
-    <span class="ERROR_MESSAGE00" id="mobileError"></span>
-  </div>
-  <div class="form-group">
-    <label for="mqcqc_parent_guardian">Parent/Guardian:<span class="input_required">*</span></label>
-    <input type="text" class="form-value1" id="mqcqc_parent_guardian">
-  </div>
-  <div class="form-group">
-    <label for="mqcqc_emergency_contact_no">Emergency Contact No:<span class="input_required">*</span></label>
-    <input type="tel" class="form-value1" id="mqcqc_emergency_contact_no">
-     <span class="ERROR_MESSAGE00" id="emergencyError"></span>
-  </div>
+      <label for="email">EMAIL<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="email">
+    </div>
+    <div class="form-group">
+      <label for="payment-amount">AMOUNT TO PAY<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="payment-amount" style="background-color: var(--primary-color); color: white;">
+    </div>
+    <div class="form-group">
+      <label for="payment-method">PAYMENT METHOD<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="payment-method">
+    </div>
+    <div class="form-group">
+      <label for="payment-reference">PAYMENT REFERENCE<span class="input_required">*</span></label>
+      <input type="text" class="form-value1" id="payment-reference">
+    </div>
+    <div class="form-group">
+      <label for="payment-receipt">PAYMENT RECEIPT PROOF<span class="input_required">*</span></label>
+      <input type="file" class="file" id="payment-receipt">
+    </div>
 <br>
 <br>
 
   <!---------------------BUTTON---------------------------->
-  <div class="actions">
-      <button class="edit-btn" id="editProfileBtn"><i class="fas fa-edit"></i> Edit</button>
-  </div>
- </div> 
+</div> 
 </div>
- </form>
-
+<div class="form-policy">
+  <input type="checkbox"> Your Accounting Note for Users Accounting Note
+  <hr class="seperator">
+  <div class="actions">
+  <button class="btn" id="btn"><i class="fas fa-edit"></i> Cancel</button>
+    <button class="btn" id="btn"><i class="fas fa-edit"></i> Proceed</button>
+</div>
+</div>
+</form>
 
 
 
