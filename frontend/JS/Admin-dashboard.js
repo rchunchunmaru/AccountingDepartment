@@ -253,3 +253,65 @@ window.addEventListener('click', (e) => {
   }
 });
 
+ flatpickr("#payment-date", {
+  mode: "range", // allows range selection (like in your sample)
+  dateFormat: "M j, Y",
+  showMonths: 2, // shows two months side by side
+  allowInput: true,
+  wrap: false,
+  altInput: true,
+  altFormat: "M j, Y",
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search");
+  const programSelect = document.getElementById("program");
+  const yearSelect = document.getElementById("year");
+  const filterBtn = document.getElementById("filter-btn");
+  const tableBody = document.getElementById("table-body");
+
+  // Function to normalize text (case-insensitive)
+  function normalize(text) {
+    return text.toLowerCase().trim();
+  }
+
+  function applyFilters() {
+    const searchValue = normalize(searchInput.value);
+    const selectedProgram = normalize(programSelect.value);
+    const selectedYear = normalize(yearSelect.value);
+
+    const rows = tableBody.querySelectorAll("tr");
+
+    rows.forEach(row => {
+      const id = normalize(row.cells[0]?.textContent || "");
+      const name = normalize(row.cells[1]?.textContent || "");
+      const program = normalize(row.cells[2]?.textContent || "");
+      const year = normalize(row.cells[3]?.textContent || "");
+
+      // Check filters
+      const matchesSearch =
+        !searchValue ||
+        id.includes(searchValue) ||
+        name.includes(searchValue);
+
+      const matchesProgram =
+        selectedProgram === "program" || !selectedProgram || program === selectedProgram;
+
+      const matchesYear =
+        selectedYear === "all years" || !selectedYear || year === selectedYear;
+
+      // Show or hide rows
+      if (matchesSearch && matchesProgram && matchesYear) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+
+  // Apply filters on button click
+  filterBtn.addEventListener("click", applyFilters);
+
+  // Optional: allow live search as you type
+  searchInput.addEventListener("input", applyFilters);
+});

@@ -310,6 +310,109 @@ body {
   padding-top: clamp(0.75rem, 1.5vw, 1rem);
 }
 
+/* ===== MAIN CONTENT SECTION (RIGHT OF SIDEBAR) ===== */
+
+.dashboard-main {
+  margin-left: clamp(280px, 20vw, 350px); /* match sidebar width */
+  margin-top: var(--navbar-height);
+  padding: 30px 40px;
+  background-color: #f3f4f6;
+  min-height: calc(100vh - var(--navbar-height));
+  transition: margin-left var(--transition-speed);
+}
+
+/* Transaction container box */
+.transaction-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Transaction header */
+.transaction-container h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Filter bar */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-section input,
+.filter-section select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filter-section button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-section button:hover {
+  background-color: #12397a;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.table-wrapper thead {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.table-wrapper tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-wrapper tbody tr:hover {
+  background-color: #eef3ff;
+}
+
+.action-icons i {
+  color: var(--primary-color);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.action-icons i:hover {
+  color: #007bff;
+}
+  
+
 /* ---------- MAIN CONTENT ---------- */
 .main-content {
   flex: 1;

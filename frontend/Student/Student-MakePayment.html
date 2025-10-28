@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mary The Queen College of Quezon City</title>
-    <link rel="stylesheet" href="../CSS/dashboard.css" />
-    <link rel="stylesheet" href="../CSS/Admission_graph.css" />
-    <link rel="stylesheet" href="../CSS/Admission_status-progress.css" />
-    <link rel="stylesheet" href="../CSS/Admission_student-form.css" />
-    <link rel="stylesheet" href="../CSS/Admission_student_dashboard.css" />
-    <link rel="stylesheet" href="../CSS/Error_message.css" />
-    <link rel="stylesheet" href="../CSS/Font_Base.css" />
-    <link rel="stylesheet" href="../CSS/input.css" />
-    <link rel="stylesheet" href="../CSS/masterlist.css" />
-    <link rel="stylesheet" href="../CSS/Student-Historypayment.css" />
-    <link rel="stylesheet" href="../CSS/Wrapper.css" />
-    <link rel="stylesheet" href="../CSS/make-payment.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mary The Queen College of Quezon City</title>
 
-    <!-- Standard favicon -->
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <!-- PNG favicons for specific sizes -->
-    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
-    <!-- Apple Touch Icon for iOS devices -->
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" sizes="180x180">
-    <!-- Microsoft Windows Tiles -->
-    <link rel="android-chrome-512x512" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512">
-    <link rel="android-chrome-192x192" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192">
-  
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- ===== CSS STYLES ===== -->
+  <link rel="stylesheet" href="../CSS/dashboard.css" />
+  <link rel="stylesheet" href="../CSS/Admission_graph.css" />
+  <link rel="stylesheet" href="../CSS/Admission_status-progress.css" />
+  <link rel="stylesheet" href="../CSS/Admission_student-form.css" />
+  <link rel="stylesheet" href="../CSS/Admission_student_dashboard.css" />
+  <link rel="stylesheet" href="../CSS/Error_message.css" />
+  <link rel="stylesheet" href="../CSS/Font_Base.css" />
+  <link rel="stylesheet" href="../CSS/input.css" />
+  <link rel="stylesheet" href="../CSS/masterlist.css" />
+  <link rel="stylesheet" href="../CSS/Student-Historypayment.css" />
+  <link rel="stylesheet" href="../CSS/Wrapper.css" />
+  <link rel="stylesheet" href="../CSS/make-payment.css" />
+  <link rel="stylesheet" href="../CSS/displayform.css" />
 
-    
-    <link rel="stylesheet" href="../CSS/Font_Base.css">
-    <link rel="stylesheet" href="../CSS/Admission_student-form.css">
-    <link rel="stylesheet" href="../CSS/input.css">
-    <link rel="stylesheet" href="../CSS/Error_message.css">
-    <link rel="stylesheet" href="../CSS/displayform.css">
-    <link rel="stylesheet" href="../CSS/Wrapper.css">
-  </head>
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ===== ICONS ===== -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- ===== FAVICONS ===== -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/android-chrome-512x512.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png" />
+</head>
+
 
 <body>
     <section class="navbar">
@@ -352,9 +348,19 @@
       <input type="text" class="form-value1" id="payment-reference">
     </div>
     <div class="form-group">
-      <label for="payment-receipt">PAYMENT RECEIPT PROOF<span class="input_required">*</span></label>
-      <input type="file" class="file" id="payment-receipt">
+    <label for="payment-receipt">
+      PAYMENT RECEIPT PROOF<span class="input_required">*</span>
+    </label>
+
+    <div class="drop-area" id="drop-area">
+      <div class="upload-content">
+        <div class="upload-icon">ICON</div>
+        <p><strong>Browse Files</strong></p>
+        <p>Drag and Drop Files Here</p>
+      </div>
+      <input type="file" class="file" id="payment-receipt" hidden>
     </div>
+  </div>
 <br>
 <br>
 
@@ -362,7 +368,7 @@
 </div> 
 </div>
 <div class="form-policy">
-  <input type="checkbox"> Your Accounting Note for Users Accounting Note
+  <input type="checkbox"> Your Accounting Note for Users Your Accounting Note for Users Your Accounting Note for Users Your Accounting Note for Users
   <hr class="seperator">
   <div class="actions">
   <button class="btn" id="btn"><i class="fas fa-edit"></i> Cancel</button>
