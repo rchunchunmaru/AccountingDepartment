@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mary The Queen College of Quezon City</title>
-    <link rel="stylesheet" href="admin-table.css" />
+    <link rel="stylesheet" href="../CSS/admin-table.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Standard favicon -->
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <!-- PNG favicons for specific sizes -->
-    <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
     <!-- Apple Touch Icon for iOS devices -->
-    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" sizes="180x180">
     <!-- Microsoft Windows Tiles -->
-    <link rel="android-chrome-512x512" type="image/png" href="/assets/images/android-chrome-512x512.png" sizes="512x512">
-    <link rel="android-chrome-192x192" type="image/png" href="/assets/images/android-chrome-192x192.png" sizes="192x192">
+    <link rel="android-chrome-512x512" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512">
+    <link rel="android-chrome-192x192" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192">
   
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -30,13 +30,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
 
 <body>
     <section class="navbar">
       <div class="nav-content">
         <div class="mqc-logo-box">
-          <img src="images/mqc-logo.png" alt="MQCQC logo" />
+          <img src="../images/mqc-logo.png" alt="MQCQC logo" />
           <h3>MARY THE QUEEN COLLEGE OF QUEZON CITY</h3>
         </div>
         <button class="sidebar-toggle" aria-label="Toggle Dashboard Sudebar">
@@ -51,7 +52,7 @@
             <div class="sidebar-header">
                 <div class="user-info">
                     <div class="user-avatar">
-                        <img src="/assets/images/personImage.jpg" alt="User Avatar">
+                        <img src="../images/personImage.jpg" alt="User Avatar">
                     </div>
                     <div class="user-details">
                         <h4>Name</h4>
@@ -63,18 +64,8 @@
                 <div class="nav-section">
                     <h5>User Dashboard</h5>
                     <ul>
-                        <li><a href="#"><i class="fas fa-user"></i> View Profile</a></li>
-                        <li class="has-submenu">
-                          <a href="#" class="submenu-toggle">
-                            <i class="fa-solid fa-money-check"></i> Bills and Payment 
-                            <i class="fa-solid fa-caret-down"></i>
-                          </a>
-                          <ul class="sub-menu">
-                            <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> View Bills</a></li>
-                            <li><a href="#"><i class="fa-solid fa-credit-card"></i> Make Payment</a></li>
-                            <li><a href="#"><i class="fa-solid fa-receipt"></i> Payment History</a></li>
-                          </ul>
-                        </li>
+                        <li><a href="index.html"><i class="fas fa-user"></i>Dashboard</a></li>
+                        <li><a href="Admin-table.html"><i class="fas fa-money-check"></i>Transaction Management</a></li>
                     </ul>
                 </div>
                 
@@ -104,23 +95,29 @@
   <div class="transaction-filters">
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search by Student Name or ID Number">
+      <input
+        type="text"
+        id="search"
+        placeholder="Search by Student Name or ID Number"
+      />
     </div>
 
     <div class="filter-controls">
-      <select>
-  <option value="Tuition Fees">Tuition Fees</option>
-  <option value="Educational Tour">Educational Tour</option>
+      <select id="purpose">
+        <option value="">All Purposes</option>
+        <option value="Tuition Fees">Tuition Fees</option>
+        <option value="Regular">Regular</option>
       </select>
 
-      <select>
-        <option value="1">1st Year</option>
-        <option value="2">2nd Year</option>
-        <option value="3">3rd Year</option>
-        <option value="4">4th Year</option>
+      <select id="year">
+        <option value="">All Years</option>
+        <option value="1st Year">1st Year</option>
+        <option value="2nd Year">2nd Year</option>
+        <option value="3rd Year">3rd Year</option>
+        <option value="4th Year">4th Year</option>
       </select>
 
-      <button class="filter-btn">Filter</button>
+      <button class="filter-btn" id="filter-btn">Filter</button>
 
       <div class="icon-actions">
         <i class="fa-solid fa-sliders"></i>
@@ -151,6 +148,7 @@
           <td>Action</td>
         </tr>
 
+        <tbody id="table-body">
         <!-- Example filled row -->
         <tr>
           <td>12359</td>
@@ -203,16 +201,16 @@
 
 
 
-        <!-- MODAL -->
-        <div class="modal" id="profileModal">
-          <div class="modal-content">
-            <span id="closeModal">&times;</span>
-            <h3>Student Profile</h3>
-            <img id="modalImg" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile Picture">
-          </div>
-        </div>
+    <!-- MODAL -->
+    <div class="modal" id="profileModal">
+      <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h3>Student Profile</h3>
+        <img id="modalImg" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile Picture">
+      </div>
+    </div>
 
         
 </body>
- <script src="dashboard.js"></script>
+ <script src="../JS/Admin-dashboard.js"></script>
 </html>

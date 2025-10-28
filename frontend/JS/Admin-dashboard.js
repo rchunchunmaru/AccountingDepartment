@@ -263,55 +263,184 @@ window.addEventListener('click', (e) => {
   altFormat: "M j, Y",
 });
 
+document.getElementById("filter-btn").addEventListener("click", function () {
+  const searchValue = document.getElementById("search").value.toLowerCase();
+  const purposeValue = document.getElementById("purpose").value.toLowerCase();
+  const yearValue = document.getElementById("year").value.toLowerCase();
+  const rows = document.querySelectorAll("#table-body tr");
+
+  rows.forEach((row) => {
+    const id = row.cells[0].textContent.toLowerCase();
+    const name = row.cells[1].textContent.toLowerCase();
+    const purpose = row.cells[6].textContent.toLowerCase();
+    const year = row.cells[3].textContent.toLowerCase();
+
+    const matchesSearch =
+      id.includes(searchValue) || name.includes(searchValue);
+    const matchesPurpose = !purposeValue || purpose.includes(purposeValue);
+    const matchesYear = !yearValue || year.includes(yearValue);
+
+    if (matchesSearch && matchesPurpose && matchesYear) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("search");
-  const programSelect = document.getElementById("program");
-  const yearSelect = document.getElementById("year");
-  const filterBtn = document.getElementById("filter-btn");
+  const addBtn = document.querySelector(".add-btn");
   const tableBody = document.getElementById("table-body");
 
-  // Function to normalize text (case-insensitive)
-  function normalize(text) {
-    return text.toLowerCase().trim();
-  }
+  addBtn.addEventListener("click", () => {
+    // Prevent multiple form rows at once
+    const existingForm = tableBody.querySelector(".new-row-form");
+    if (existingForm) {
+      alert("Please save or cancel the current form before adding another.");
+      return;
+    }
 
-  function applyFilters() {
-    const searchValue = normalize(searchInput.value);
-    const selectedProgram = normalize(programSelect.value);
-    const selectedYear = normalize(yearSelect.value);
+    // Generate a random 5-digit Student ID
+    const studentId = Math.floor(10000 + Math.random() * 90000);
 
-    const rows = tableBody.querySelectorAll("tr");
+    // Create the new editable row
+    const newRow = document.createElement("tr");
+    newRow.classList.add("new-row-form");
 
-    rows.forEach(row => {
-      const id = normalize(row.cells[0]?.textContent || "");
-      const name = normalize(row.cells[1]?.textContent || "");
-      const program = normalize(row.cells[2]?.textContent || "");
-      const year = normalize(row.cells[3]?.textContent || "");
+    newRow.innerHTML = `
+      <td>${studentId}</td>
+      <td><input type="text" placeholder="Full Name"></td>
+      <td>
+        <select>
+          <option value="">Select Program</option>
+          <option>BSIT</option>
+          <option>BSBA</option>
+          <option>BSED</option>
+          <option>BSN</option>
+          <option>BSA</option>
+        </select>
+      </td>
+      <td>
+        <select>
+          <option value="">Select Year</option>
+          <option>1st Year</option>
+          <option>2nd Year</option>
+          <option>3rd Year</option>
+          <option>4th Year</option>
+        </select>
+      </td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td>
+        <select>
+          <option value="">Select Purpose</option>
+          <option>Tuition Fees</option>
+          <option>Midterm</option>
+          <option>Final</option>
+          <option>Miscellaneous</option>
+        </select>
+      </td>
+      <td>
+        <select>
+          <option value="">Select Type</option>
+          <option>Regular</option>
+          <option>Scholar</option>
+        </select>
+      </td>
+      <td><input type="file"></td>
+      <td>
+        <select>
+          <option value="">Select MOP</option>
+          <option>Walk-in</option>
+          <option>GCASH</option>
+          <option>Bank</option>
+        </select>
+      </td>
+      <td>
+        <select>
+          <option value="">Select Status</option>
+          <option>Paid</option>
+          <option>Unpaid</option>
+        </select>
+      </td>
+      <td class="action-icons">
+        <button class="save-btn"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+        <button class="cancel-btn"><i class="fa-solid fa-xmark"></i> Cancel</button>
+      </td>
+    `;
 
-      // Check filters
-      const matchesSearch =
-        !searchValue ||
-        id.includes(searchValue) ||
-        name.includes(searchValue);
+    tableBody.appendChild(newRow);
 
-      const matchesProgram =
-        selectedProgram === "program" || !selectedProgram || program === selectedProgram;
+     /// Handle Save button
+    const saveBtn = newRow.querySelector(".save-btn");
+    saveBtn.addEventListener("click", () => {
+      const name = newRow.querySelector("input[type='text']").value.trim() || "—";
+      const program = newRow.querySelectorAll("select")[0].value || "—";
+      const year = newRow.querySelectorAll("select")[1].value || "—";
+      const fileInput = newRow.querySelector("input[type='file']");
+      const file = fileInput.files.length > 0 ? fileInput.files[0].name : "No File";
 
-      const matchesYear =
-        selectedYear === "all years" || !selectedYear || year === selectedYear;
+      // Capture the editable parts before replacing
+      const dateFrom = newRow.querySelectorAll("input[type='date']")[0].value;
+      const dateTo = newRow.querySelectorAll("input[type='date']")[1].value;
+      const purpose = newRow.querySelectorAll("select")[2].value;
+      const type = newRow.querySelectorAll("select")[3].value;
+      const mop = newRow.querySelectorAll("select")[4].value;
+      const status = newRow.querySelectorAll("select")[5].value;
 
-      // Show or hide rows
-      if (matchesSearch && matchesProgram && matchesYear) {
-        row.style.display = "";
-      } else {
-        row.style.display = "none";
+      // Helper function to format year level with superscript
+      function formatYear(year) {
+        if (!year) return "—";
+        const map = {
+          "1st Year": "1<sup>st</sup> Year",
+          "2nd Year": "2<sup>nd</sup> Year",
+          "3rd Year": "3<sup>rd</sup> Year",
+          "4th Year": "4<sup>th</sup> Year"
+        };
+        return map[year] || year;
       }
+
+      newRow.classList.remove("new-row-form");
+
+      // Replace non-editable columns with text
+      newRow.innerHTML = `
+        <td>${studentId}</td>
+        <td>${name}</td>
+        <td>${program}</td>
+        <td>${formatYear(year)}</td>
+        <td><input type="date" value="${dateFrom}"></td>
+        <td><input type="date" value="${dateTo}"></td>
+        <td>${createSelect(["Tuition Fees","Midterm","Final","Miscellaneous"], purpose)}</td>
+        <td>${createSelect(["Regular","Scholar"], type)}</td>
+        <td>${file}</td>
+        <td>${createSelect(["Walk-in","GCASH","Bank"], mop)}</td>
+        <td>${createSelect(["Paid","Unpaid"], status)}</td>
+        <td class="action-icons">
+          <i class="fa-solid fa-eye"></i>
+          <i class="fa-solid fa-pen edit-icon"></i>
+          <i class="fa-solid fa-trash delete-icon"></i>
+        </td>
+      `;
     });
+
+    // Handle Cancel button
+    const cancelBtn = newRow.querySelector(".cancel-btn");
+    cancelBtn.addEventListener("click", () => {
+      newRow.remove();
+    });
+  });
+
+  // Helper function to recreate selects and retain value
+  function createSelect(options, selectedValue = "") {
+    return `
+      <select>
+        ${options
+          .map(
+            opt => `<option ${opt === selectedValue ? "selected" : ""}>${opt}</option>`
+          )
+          .join("")}
+      </select>
+    `;
   }
-
-  // Apply filters on button click
-  filterBtn.addEventListener("click", applyFilters);
-
-  // Optional: allow live search as you type
-  searchInput.addEventListener("input", applyFilters);
 });
+
