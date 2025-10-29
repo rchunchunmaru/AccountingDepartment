@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mary The Queen College of Quezon City</title>
+
+  <!-- ===== CSS STYLES ===== -->
+  <link rel="stylesheet" href="../CSS/dashboard.css" />
+  <link rel="stylesheet" href="../CSS/Admission_graph.css" />
+  <link rel="stylesheet" href="../CSS/Admission_status-progress.css" />
+  <link rel="stylesheet" href="../CSS/Admission_student-form.css" />
+  <link rel="stylesheet" href="../CSS/Admission_student_dashboard.css" />
+  <link rel="stylesheet" href="../CSS/Error_message.css" />
+  <link rel="stylesheet" href="../CSS/Font_Base.css" />
+  <link rel="stylesheet" href="../CSS/input.css" />
+  <link rel="stylesheet" href="../CSS/masterlist.css" />
+  <link rel="stylesheet" href="../CSS/Student-Historypayment.css" />
+  <link rel="stylesheet" href="../CSS/Wrapper.css" />
+  <link rel="stylesheet" href="../CSS/make-payment.css" />
+  <link rel="stylesheet" href="../CSS/displayform.css" />
+
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ===== ICONS ===== -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- ===== FAVICONS ===== -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/android-chrome-512x512.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png" />
+  <style>
+  body.makepayment-page .main-content {
+    margin-left: clamp(280px, 20vw, 350px);
+    width: calc(95% - clamp(280px, 20vw, 350px));
+    max-width: 95%;
+    padding: 50px 50px;
+
+  }
+</style>
+</head>
+
+
+<body class="makepayment-page">
+
+    <section class="navbar">
+      <div class="nav-content">
+        <div class="mqc-logo-box">
+          <img src=../images/mqc-logo.png" alt="MQCQC logo" />
+          <h3>MARY THE QUEEN COLLEGE OF QUEZON CITY</h3>
+        </div>
+        <button class="sidebar-toggle" aria-label="Toggle Dashboard Sudebar">
+          <i class="fa-solid fa-bars"></i>
+          </i>
+        </button>
+      </div>
+    </section>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="../images/personImage.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Name</h4>
+                        <span>name@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h5>User Dashboard</h5>
+                    <ul>
+                      <li><a href="index.html"><i class="fa-solid fa-file-invoice-dollar"></i> Dashboard</a></li>
+                      <li><a href="Student-BasicInfo.html"><i class="fas fa-user"></i> View Profile</a></li>
+                      <li class="has-submenu">
+                          <a href="#" class="submenu-toggle">
+                            <i class="fa-solid fa-money-check"></i> Bills and Payment 
+                            <i class="fa-solid fa-caret-down"></i>
+                          </a>
+                          <ul class="sub-menu">
+                            <li><a href="#"><i class="fa-solid fa-credit-card"></i> Make Payment</a></li>
+                            <li><a href="Student-Historypayment.html"><i class="fa-solid fa-receipt"></i> Transaction History</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h5>MQCQC Services</h5>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fa-solid fa-calculator"></i></i> Accounting</a></li>
+                        <li><a href="#"><i class="fa-solid fa-building-columns"></i> Admission</a></li>
+                        <li><a href="#"><i class="fas fa-address-book"></i> Registrar</a></li>
+                        <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                        <li><a href="#"><i class="fa-solid fa-gears"></i>TESDA</a></li>
+                        <li><a href="#"><i class="fas fa-id-card"></i> ID Section</a></li>
+                        
+                        
+                <div class="nav-section nav-bottom">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-panel"></div>
+        </aside>
+
+            <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+
+         <div class="breadcrumb">
+            <span><i class="fas fa-home"></i> ACCOUNTING</span>
+            <span>|</span>
+            <span>Student</span>
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          
+        <div class="profile-card">
+          <div class="profile-left">
+            <div class="profile-img">
+              <div class="circle no-image" id="profileCircle">
+                <!-- Image will be inserted here via JavaScript -->
+              </div>
+              <input type="file" id="uploadImg" accept="image/*" style="display:none;">
+              <a href="#" class="btn" id="viewProfileBtn">View ID</a>
+            </div>
+            <div class="profile-text">
+              <h2 id="profileName" data-field="fullName">NAME NAME NAME</h2>
+              <p id="profileRole" data-field="role">Applicant</p>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="detail">
+              <i class="fas fa-user"></i> 
+              <span id="profileGsuite" data-field="gsuiteAccount">name@mqcqc.ph.education</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-envelope"></i> 
+              <span id="profileEmail" data-field="email">name@gmail.com</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-phone"></i> 
+              <span id="profilePhone" data-field="phone">09******** / 09********</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-map-marker-alt"></i> 
+              <span id="profileAddress" data-field="profileAddress">44 Dupax St, Commonwealth, Quezon City</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL -->
+        <div class="modal" id="profileModal">
+          <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h3>Student Profile</h3>
+            <img id="modalImg" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile Picture">
+          </div>
+        </div>
+
+
+
+
+
+<!-----------------------------------Application Term & CourseStrand------------------------------------------------------------>     
+<!--------------------------------------- -- SECTION HEADER---------------------------------------------------------------------->
+
+       <!-- PAYMENT REMINDER + METHODS -->
+<div class="payment-card">
+  <div class="payment-header">
+    <h3>Reminder:</h3>
+    <p>
+      Ensure all information provided is accurate and complete.
+      Fields marked with an asterisk (*) are mandatory.
+      Send your payment via:
+    </p>
+  </div>
+  <div class="payment-body">
+    <p><strong>BPI:</strong> 9057 XXXX XXXX | MQCQC BPI</p>
+    <p><strong>GCASH NO:</strong> 09********* | MQCQC USER NAME</p>
+  </div>
+</div>
+
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------| CONTENT |--------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- PAYMENT INFORMATION SECTION -->
+<div class="payment-info-card-section">
+  <h4 class="section-subtitle">Payment Information</h4>
+
+  <!-- Base fields (always visible) -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="campus">CAMPUS<span class="input_required">*</span></label>
+      <select id="campus" name="campus" required>
+        <option value="">Select Campus</option>
+        <option value="MQCQC Quezon City Branch">MQCQC Quezon City Branch</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="program">PROGRAM<span class="input_required">*</span></label>
+      <select id="program" name="program" required>
+        <option value="">Select Program</option>
+        <option value="TESDA PROGRAM">TESDA PROGRAM</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- TESDA fields (hidden by default) -->
+  <div id="tesda-section" class="hidden-section">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="tesda-program">TESDA PROGRAM NAME<span class="input_required">*</span></label>
+        <select id="tesda-program" name="tesda-program" required>
+          <option value="">Select TESDA Program</option>
+          <option value="CSS NCII">CSS NCII</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="purpose">PURPOSE<span class="input_required">*</span></label>
+        <select id="purpose" name="purpose" required>
+          <option value="">Select Purpose</option>
+          <option value="Assessment Fee">Assessment Fee</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="applicant-id">APPLICANT ID<span class="input_required">*</span></label>
+        <input type="text" id="applicant-id" placeholder="Enter your ID" />
+      </div>
+      <div class="form-group">
+        <label for="surname">SURNAME<span class="input_required">*</span></label>
+        <input type="text" id="surname" placeholder="e.g. Dela Cruz" />
+      </div>
+      <div class="form-group">
+        <label for="firstname">FIRST NAME<span class="input_required">*</span></label>
+        <input type="text" id="firstname" placeholder="e.g. Juan" />
+      </div>
+      <div class="form-group">
+        <label for="middlename">MIDDLE NAME</label>
+        <input type="text" id="middlename" placeholder="e.g. Santos" />
+      </div>
+      <div class="form-group">
+        <label for="suffix">SUFFIX</label>
+        <input type="text" id="suffix" placeholder="e.g. Jr." />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">EMAIL<span class="input_required">*</span></label>
+      <input type="email" id="email" placeholder="example@gmail.com" />
+    </div>
+
+    <div class="form-group" id="amount-group" style="display: none;">
+  <label for="amount">AMOUNT TO PAY<span class="input_required">*</span></label>
+  <input type="text" id="amount" placeholder="Enter amount" />
+</div>
+
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="payment-method">PAYMENT METHOD<span class="input_required">*</span></label>
+        <select id="payment-method" name="payment-method" required>
+          <option value="">Select Payment Method</option>
+          <option value="GCash">GCash</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="reference-no">GCASH REFERENCE NO.<span class="input_required">*</span></label>
+        <input type="text" id="reference-no" placeholder="Enter Reference No." />
+      </div>
+    </div>
+
+    <div class="form-group">
+  <label for="payment-receipt">PAYMENT RECEIPT PROOF<span class="input_required">*</span></label>
+  <div class="drop-area" id="drop-area">
+    <div class="upload-content" id="upload-content">
+      <div class="upload-icon">📁</div>
+      <p><strong>Browse Files</strong></p>
+      <p>Drag and Drop Files Here</p>
+    </div>
+    <input type="file" id="payment-receipt" hidden />
+  </div>
+  <p id="file-name" class="file-name"></p>
+</div>
+
+
+</div>
+
+</div>
+</form>
+
+
+    <div class="action">
+   <button class="proceed-btn" id="proceed-btn" disabled>Proceed</button>
+  </div>
+
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------| MODAL |------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------->
+         
+
+<!-- Confirmation Modal -->
+<!-- Confirmation Modal -->
+<div id="confirmationModal" class="ADD_modal">
+  <div class="receipt-box landscape">
+    <div class="receipt-header">
+      <img src="../images/mqc-logo.png" alt="School Logo" class="receipt-logo" />
+      <h2>Mary the Queen College of Quezon City</h2>
+      <p class="receipt-subtitle">Payment Confirmation</p>
+    </div>
+
+    <hr class="receipt-divider" />
+
+    <div class="receipt-section">
+      <h4>Applicant:</h4>
+      <p id="applicantName" class="receipt-value"></p>
+      <p id="emailDisplay" class="receipt-value"></p>
+    </div>
+
+    <div class="receipt-section">
+      <h4>Payment Details:</h4>
+      <table class="receipt-table">
+        <tr><td>Campus:</td><td id="campusDisplay"></td></tr>
+        <tr><td>Program:</td><td id="programDisplay"></td></tr>
+        <tr><td>TESDA Program:</td><td id="tesdaProgramDisplay"></td></tr>
+        <tr><td>Purpose:</td><td id="purposeDisplay"></td></tr>
+        <tr><td>Amount:</td><td id="amountDisplay"></td></tr>
+        <tr><td>Payment Method:</td><td id="paymentMethodDisplay"></td></tr>
+        <tr><td>Reference No.:</td><td id="referenceNoDisplay"></td></tr>
+        <tr><td>Uploaded File:</td><td id="receiptDisplay"></td></tr>
+      </table>
+    </div>
+
+    <hr class="receipt-divider" />
+
+    <div class="receipt-footer">
+      <p><em>This serves as your payment confirmation preview.</em></p>
+      <div class="receipt-buttons">
+        <button id="cancelModalBtn" class="cancel-btn">Cancel</button>
+        <button id="FINALconfirmModalBtn" class="confirm-btn">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Caution Modal -->
+<div id="cautionModal" class="ADD_modal">
+  <div class="ADD_content">
+    <h3>Are you sure all information is correct?</h3>
+    <p>Please double-check your details before submission.</p>
+    <div class="ADD_button-group">
+      <button id="goBackBtn" class="ADD_FORM_btn1">Go Back</button>
+      <button id="confirmSendBtn" class="ADD_FORM_btn2">Yes, Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- Success Notification -->
+<div id="successNotif" class="ADD_modal">
+  <div class="ADD_content" style="text-align:center;">
+    <h3>✅ Payment Information Sent!</h3>
+    <p>Your payment confirmation has been successfully submitted.</p>
+  </div>
+</div>
+
+
+
+       
+</body>
+ <script src="../JS/payment-info.js"></script>
+
+</html>
