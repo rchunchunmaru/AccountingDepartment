@@ -1,20 +1,22 @@
 // dashboard.js (clean rebuilt version)
 
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   // ----------------- SIDEBAR TOGGLE -----------------
-  const dboardSidebar = document.querySelector('.dashboard-sidebar');
-  const toggleButton = document.querySelector('.sidebar-toggle');
+  const dboardSidebar = document.querySelector(".dashboard-sidebar");
+  const toggleButton = document.querySelector(".sidebar-toggle");
 
   if (toggleButton && dboardSidebar) {
-    toggleButton.addEventListener('click', () => {
-      dboardSidebar.classList.toggle('sidebar-open');
+    toggleButton.addEventListener("click", () => {
+      dboardSidebar.classList.toggle("sidebar-open");
     });
 
     // Close sidebar when clicking outside (mobile)
-    document.addEventListener('click', (e) => {
-      if (!dboardSidebar.contains(e.target) && !toggleButton.contains(e.target)) {
-        dboardSidebar.classList.remove('sidebar-open');
+    document.addEventListener("click", (e) => {
+      if (
+        !dboardSidebar.contains(e.target) &&
+        !toggleButton.contains(e.target)
+      ) {
+        dboardSidebar.classList.remove("sidebar-open");
       }
     });
   }
@@ -30,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let uploadedImg = "https://via.placeholder.com/300x300.png?text=Photo";
 
   if (profileCircle && uploadInput) {
-    profileCircle.addEventListener('click', () => uploadInput.click());
+    profileCircle.addEventListener("click", () => uploadInput.click());
   }
 
   if (uploadInput) {
-    uploadInput.addEventListener('change', (e) => {
+    uploadInput.addEventListener("change", (e) => {
       const file = e.target.files && e.target.files[0];
       if (!file) return;
       const reader = new FileReader();
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         uploadedImg = ev.target.result;
         if (profileCircle) {
           profileCircle.style.backgroundImage = `url(${uploadedImg})`;
-          profileCircle.classList.remove('no-image');
+          profileCircle.classList.remove("no-image");
           profileCircle.innerHTML = `<img src="${uploadedImg}" alt="Profile Picture">`;
         }
       };
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (viewProfileBtn && modal && modalImg) {
-    viewProfileBtn.addEventListener('click', (e) => {
+    viewProfileBtn.addEventListener("click", (e) => {
       e.preventDefault();
       modal.style.display = "flex";
       modalImg.src = uploadedImg;
@@ -59,11 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (closeModal && modal) {
-    closeModal.addEventListener('click', () => modal.style.display = "none");
+    closeModal.addEventListener("click", () => (modal.style.display = "none"));
   }
 
   // Close profile modal when clicking outside
-  window.addEventListener('click', (e) => {
+  window.addEventListener("click", (e) => {
     if (modal && e.target === modal) modal.style.display = "none";
   });
 
@@ -72,17 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dummy request data
   const requestsData = {
     pending: [
-      { text: "Sean Patrick Remejio request a G-cash Payment", date: "2025-10-06" },
+      {
+        text: "Sean Patrick Remejio request a G-cash Payment",
+        date: "2025-10-06",
+      },
       { text: "Jane Doe request a G-cash Payment", date: "2025-10-05" },
-      { text: "Michael Cruz request a TOR", date: "2025-10-04" }
+      { text: "Michael Cruz request a TOR", date: "2025-10-04" },
     ],
     completed: [
       { text: "Mark Santos tuition fee completed", date: "2025-10-03" },
-      { text: "Liza Ramos certificate issued", date: "2025-10-02" }
+      { text: "Liza Ramos certificate issued", date: "2025-10-02" },
     ],
-    rejected: [
-      { text: "Ana Dela Cruz request rejected", date: "2025-10-01" }
-    ]
+    rejected: [{ text: "Ana Dela Cruz request rejected", date: "2025-10-01" }],
   };
 
   // Elements for main modal
@@ -96,15 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeRequestModal = document.getElementById("closeRequestModal");
 
   // Handle card clicks
-  document.querySelectorAll('.status-card').forEach(card => {
-    card.addEventListener('click', () => {
+  document.querySelectorAll(".status-card").forEach((card) => {
+    card.addEventListener("click", () => {
       const id = card.id; // pendingCard, completedCard, rejectedCard
       let type = "pending";
       if (id === "completedCard") type = "completed";
       if (id === "rejectedCard") type = "rejected";
 
       // Update modal title
-      statusTitle.textContent = type.charAt(0).toUpperCase() + type.slice(1) + " Requests";
+      statusTitle.textContent =
+        type.charAt(0).toUpperCase() + type.slice(1) + " Requests";
 
       // Clear previous rows
       statusTableBody.innerHTML = "";
@@ -129,18 +133,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (closeStatusModal && statusModal) {
-    closeStatusModal.addEventListener('click', () => statusModal.style.display = "none");
+    closeStatusModal.addEventListener(
+      "click",
+      () => (statusModal.style.display = "none")
+    );
   }
 
+  // Eye icon click → open secondary modal
+  document.addEventListener("click", (e) => {
+    if (e.target.matches(".fa-eye")) {
+      if (requestModal) requestModal.style.display = "flex";
+    }
+  });
 
   if (closeRequestModal && requestModal) {
-    closeRequestModal.addEventListener('click', () => requestModal.style.display = "none");
+    closeRequestModal.addEventListener(
+      "click",
+      () => (requestModal.style.display = "none")
+    );
   }
 
   // Close modals when clicking outside
-  window.addEventListener('click', (e) => {
-    if (statusModal && e.target === statusModal) statusModal.style.display = "none";
-    if (requestModal && e.target === requestModal) requestModal.style.display = "none";
+  window.addEventListener("click", (e) => {
+    if (statusModal && e.target === statusModal)
+      statusModal.style.display = "none";
+    if (requestModal && e.target === requestModal)
+      requestModal.style.display = "none";
   });
 
   // Preload numbers into cards on page load
@@ -148,16 +166,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const completedCard = document.getElementById("completedCard");
   const rejectedCard = document.getElementById("rejectedCard");
 
-  if (pendingCard) pendingCard.querySelector("p").textContent = requestsData.pending.length;
-  if (completedCard) completedCard.querySelector("p").textContent = requestsData.completed.length;
-  if (rejectedCard) rejectedCard.querySelector("p").textContent = requestsData.rejected.length;
-
+  if (pendingCard)
+    pendingCard.querySelector("p").textContent = requestsData.pending.length;
+  if (completedCard)
+    completedCard.querySelector("p").textContent =
+      requestsData.completed.length;
+  if (rejectedCard)
+    rejectedCard.querySelector("p").textContent = requestsData.rejected.length;
 }); // end DOMContentLoaded
 
 // Eye icon click → open details modal (only for pending requests)
 // Eye icon click → open correct modal depending on request type
-document.addEventListener('click', (e) => {
-  if (e.target.matches('.fa-eye')) {
+document.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-eye")) {
     const type = e.target.dataset.type; // "pending", "completed", or "rejected"
 
     // Always close the table modal first
@@ -165,21 +186,19 @@ document.addEventListener('click', (e) => {
 
     if (type === "pending") {
       // ✅ Show editable transaction modal
-      const transactionModal = document.getElementById("transactionDetailsModal");
+      const transactionModal = document.getElementById(
+        "transactionDetailsModal"
+      );
       if (transactionModal) transactionModal.style.display = "flex";
-
     } else if (type === "completed" || type === "rejected") {
       // ✅ Show read-only receipt modal
       const receiptModal = document.getElementById("receiptModal");
       if (receiptModal) receiptModal.style.display = "flex";
-
     } else {
       console.warn("Unknown transaction type:", type);
     }
   }
 });
-
-
 
 // Handle close, cancel, and submit buttons
 const transactionModal = document.getElementById("transactionDetailsModal");
@@ -188,15 +207,21 @@ const cancelTransaction = document.getElementById("cancelTransaction");
 const submitTransaction = document.getElementById("submitTransaction");
 
 if (closeTransactionModal && transactionModal) {
-  closeTransactionModal.addEventListener('click', () => transactionModal.style.display = "none");
+  closeTransactionModal.addEventListener(
+    "click",
+    () => (transactionModal.style.display = "none")
+  );
 }
 
 if (cancelTransaction) {
-  cancelTransaction.addEventListener('click', () => transactionModal.style.display = "none");
+  cancelTransaction.addEventListener(
+    "click",
+    () => (transactionModal.style.display = "none")
+  );
 }
 
 if (submitTransaction) {
-  submitTransaction.addEventListener('click', () => {
+  submitTransaction.addEventListener("click", () => {
     alert("Transaction Submitted Successfully!");
     transactionModal.style.display = "none";
   });
@@ -209,7 +234,7 @@ const closeRejectModal = document.getElementById("closeRejectModal");
 const saveReject = document.getElementById("saveReject");
 
 if (rejectTransaction && rejectModal) {
-  rejectTransaction.addEventListener('click', () => {
+  rejectTransaction.addEventListener("click", () => {
     // Close the transaction details modal first
     const transactionModal = document.getElementById("transactionDetailsModal");
     if (transactionModal) transactionModal.style.display = "none";
@@ -218,11 +243,14 @@ if (rejectTransaction && rejectModal) {
 }
 
 if (closeRejectModal && rejectModal) {
-  closeRejectModal.addEventListener('click', () => rejectModal.style.display = "none");
+  closeRejectModal.addEventListener(
+    "click",
+    () => (rejectModal.style.display = "none")
+  );
 }
 
 if (saveReject) {
-  saveReject.addEventListener('click', () => {
+  saveReject.addEventListener("click", () => {
     alert("Rejection saved successfully!");
     rejectModal.style.display = "none";
   });
@@ -235,19 +263,19 @@ const receiptModal = document.getElementById("receiptModal");
 const closeReceiptModal = document.getElementById("closeReceiptModal");
 
 if (closeReceiptModal && receiptModal) {
-  closeReceiptModal.addEventListener('click', () => {
+  closeReceiptModal.addEventListener("click", () => {
     receiptModal.style.display = "none";
   });
 }
 
 // Allow closing by clicking outside the modal
-window.addEventListener('click', (e) => {
+window.addEventListener("click", (e) => {
   if (receiptModal && e.target === receiptModal) {
     receiptModal.style.display = "none";
   }
 });
 
- flatpickr("#payment-date", {
+flatpickr("#payment-date", {
   mode: "range", // allows range selection (like in your sample)
   dateFormat: "M j, Y",
   showMonths: 2, // shows two months side by side
@@ -282,6 +310,7 @@ document.getElementById("filter-btn").addEventListener("click", function () {
   });
 });
 
+//-----------NEW ROW FORM  CREATION--------------
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector(".add-btn");
   const tableBody = document.getElementById("table-body");
@@ -305,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <td>${studentId}</td>
       <td><input type="text" placeholder="Full Name"></td>
       <td>
-        <select>
+        <select class="select-course">
           <option value="">Select Program</option>
           <option>BSIT</option>
           <option>BSBA</option>
@@ -316,13 +345,14 @@ document.addEventListener("DOMContentLoaded", () => {
       </td>
       <td>
         <select>
-          <option value="">Select Year</option>
+          <option value="" class="select-year">Select Year</option>
           <option>1st Year</option>
           <option>2nd Year</option>
           <option>3rd Year</option>
           <option>4th Year</option>
         </select>
       </td>
+      <td><input type="date"></td>
       <td><input type="date"></td>
       <td><input type="date"></td>
       <td>
@@ -365,18 +395,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tableBody.appendChild(newRow);
 
-     /// Handle Save button
+    /// Handle Save button
     const saveBtn = newRow.querySelector(".save-btn");
     saveBtn.addEventListener("click", () => {
-      const name = newRow.querySelector("input[type='text']").value.trim() || "—";
+      const name =
+        newRow.querySelector("input[type='text']").value.trim() || "—";
       const program = newRow.querySelectorAll("select")[0].value || "—";
       const year = newRow.querySelectorAll("select")[1].value || "—";
       const fileInput = newRow.querySelector("input[type='file']");
-      const file = fileInput.files.length > 0 ? fileInput.files[0].name : "No File";
+      const file =
+        fileInput.files.length > 0 ? fileInput.files[0].name : "No File";
 
       // Capture the editable parts before replacing
+      const date = newRow.querySelectorAll("input[type='date']")[0].value;
       const dateFrom = newRow.querySelectorAll("input[type='date']")[0].value;
-      const dateTo = newRow.querySelectorAll("input[type='date']")[1].value;
+      const dateTo = newRow.querySelectorAll("input[type='date']")[2].value;
       const purpose = newRow.querySelectorAll("select")[2].value;
       const type = newRow.querySelectorAll("select")[3].value;
       const mop = newRow.querySelectorAll("select")[4].value;
@@ -389,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "1st Year": "1<sup>st</sup> Year",
           "2nd Year": "2<sup>nd</sup> Year",
           "3rd Year": "3<sup>rd</sup> Year",
-          "4th Year": "4<sup>th</sup> Year"
+          "4th Year": "4<sup>th</sup> Year",
         };
         return map[year] || year;
       }
@@ -402,13 +435,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${name}</td>
         <td>${program}</td>
         <td>${formatYear(year)}</td>
+        <td><input type="date" value="${date}"></td>
         <td><input type="date" value="${dateFrom}"></td>
         <td><input type="date" value="${dateTo}"></td>
-        <td>${createSelect(["Tuition Fees","Midterm","Final","Miscellaneous"], purpose)}</td>
-        <td>${createSelect(["Regular","Scholar"], type)}</td>
+        <td>${createSelect(
+          ["Tuition Fees", "Midterm", "Final", "Miscellaneous"],
+          purpose
+        )}</td>
+        <td>${createSelect(["Regular", "Scholar"], type)}</td>
         <td>${file}</td>
-        <td>${createSelect(["Walk-in","GCASH","Bank"], mop)}</td>
-        <td>${createSelect(["Paid","Unpaid"], status)}</td>
+        <td>${createSelect(["Walk-in", "GCASH", "Bank"], mop)}</td>
+        <td>${createSelect(["Paid", "Unpaid"], status)}</td>
         <td class="action-icons">
           <i class="fa-solid fa-eye"></i>
           <i class="fa-solid fa-pen edit-icon"></i>
@@ -430,33 +467,100 @@ document.addEventListener("DOMContentLoaded", () => {
       <select>
         ${options
           .map(
-            opt => `<option ${opt === selectedValue ? "selected" : ""}>${opt}</option>`
+            (opt) =>
+              `<option ${
+                opt === selectedValue ? "selected" : ""
+              }>${opt}</option>`
           )
           .join("")}
       </select>
     `;
   }
-});
 
-// 🟦 Reason buttons selectable toggle
-const reasonButtons = document.querySelectorAll('.reason-option');
-reasonButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Remove "selected" class from all buttons
-    reasonButtons.forEach(b => b.classList.remove('selected'));
-    // Add "selected" to clicked one
-    btn.classList.add('selected');
-  });
-});
+  document.addEventListener("click", (e) => {
+    const row = e.target.closest("tr");
 
-// ✅ Make REASON options selectable (single-choice)
-document.addEventListener("DOMContentLoaded", function () {
-  const reasonButtons = document.querySelectorAll(".reason-btn");
+    // DELETE
+    if (e.target.classList.contains("fa-trash")) {
+      if (confirm("Are you sure you want to delete this record?")) row.remove();
+    }
 
-  reasonButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      reasonButtons.forEach((b) => b.classList.remove("selected"));
-      btn.classList.add("selected");
-    });
+    // EDIT - open modal
+    if (e.target.classList.contains("fa-pen")) {
+      const cells = Array.from(row.children).slice(0, -1);
+      const modal = document.getElementById("editModal");
+      const inputs = modal.querySelectorAll("input, select");
+
+      inputs.forEach((input, index) => {
+        if (input.type === "file") return;
+        input.value = cells[index].textContent.trim();
+      });
+
+      modal.style.display = "flex";
+
+      const saveEditBtn = modal.querySelector("#saveEditBtn");
+      const cancelEditBtn = modal.querySelector("#cancelEditBtn");
+
+      saveEditBtn.onclick = () => {
+        inputs.forEach((input, index) => {
+          if (input.type === "file") {
+            const fileName =
+              input.files[0]?.name || cells[index].textContent.trim();
+            cells[index].textContent = fileName;
+          } else {
+            cells[index].textContent = input.value || "—";
+          }
+        });
+        modal.style.display = "none";
+      };
+
+      cancelEditBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+
+      window.onclick = (ev) => {
+        if (ev.target === modal) modal.style.display = "none";
+      };
+    }
+
+    // PREVIEW
+    if (e.target.classList.contains("fa-eye")) {
+      const modal = document.getElementById("previewModal");
+      const modalBody = modal.querySelector(".modal-body");
+
+      const labels = [
+        "Student ID",
+        "Full Name",
+        "Program",
+        "Year",
+        "Date",
+        "Date From",
+        "Date To",
+        "Purpose",
+        "Type",
+        "File",
+        "Mode of Payment",
+        "Status",
+      ];
+
+      const cells = Array.from(row.children);
+      modalBody.innerHTML = cells
+        .slice(0, -1) // Exclude the action icons column
+        .map(
+          (td, i) =>
+            `<p><strong>${labels[i] || `Field ${i + 1}`}:</strong> ${
+              td.textContent.trim() || "—"
+            }</p>`
+        )
+        .join("");
+
+      modal.style.display = "flex";
+
+      const close = modal.querySelector(".closePreviewModal");
+      close.addEventListener("click", () => (modal.style.display = "none"));
+      window.addEventListener("click", (ev) => {
+        if (ev.target === modal) modal.style.display = "none";
+      });
+    }
   });
 });

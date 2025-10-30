@@ -237,6 +237,7 @@
 <div class="modal" id="transactionDetailsModal">
   <div class="modal-content large">
     <span id="closeTransactionModal">&times;</span>
+    <h3>TRANSACTION DETAILS</h3>
     <p class="school-header">
       MARY THE QUEEN COLLEGE OF QUEZON CITY<br>
       Commonwealth Ave. Cr. Rd. 44 Diliman, 1121 Quezon City, NCR Second District, Philippines<br>
@@ -276,7 +277,7 @@
 <div class="modal" id="rejectModal">
   <div class="modal-content large">
     <span id="closeRejectModal">&times;</span>
-
+    <h3>REMARKS</h3>
 
     <div class="remarks-form">
       <div class="form-row">
@@ -301,16 +302,15 @@
         </select>
       </div>
 
-      <div class="reason-container">
-  <h4>REASON</h4>
-  <div class="reason-options">
-  <button class="reason-btn">Incorrect Details</button>
-  <button class="reason-btn">Insufficient Funds</button>
-  <button class="reason-btn">Duplicate Payment</button>
-  <button class="reason-btn">Other</button>
-</div>
+      <hr>
 
-</div>
+      <h4>REASON</h4>
+      <div class="reason-buttons">
+        <button class="reason-btn">Incorrect Details</button>
+        <button class="reason-btn">Insufficient Funds</button>
+        <button class="reason-btn">Technical or System Error</button>
+        <button class="reason-btn">Duplicate Transaction</button>
+      </div>
 
       <h4>FOR REJECTED ONLY</h4>
       <textarea id="rejectMessage" rows="4" placeholder="Enter rejection message..."></textarea>
@@ -326,6 +326,7 @@
 <div class="modal" id="receiptModal">
   <div class="modal-content large">
     <span id="closeReceiptModal">&times;</span>
+    <h3>RECEIPT</h3>
     <div class="receipt-container">
       <h4>MARY THE QUEEN COLLEGE OF QUEZON CITY</h4>
       <p>
