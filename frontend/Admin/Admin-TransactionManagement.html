@@ -26,13 +26,40 @@
 
     <!-- FAVICONS -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
-    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" sizes="180x180" />
-    <link rel="icon" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512" />
-    <link rel="icon" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../images/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../images/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="../images/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../images/android-chrome-512x512.png"
+      sizes="512x512"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../images/android-chrome-192x192.png"
+      sizes="192x192"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
 
@@ -72,7 +99,9 @@
             <h5>User Dashboard</h5>
             <ul>
               <li>
-                <a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="index.html"
+                  ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+                >
               </li>
               <li>
                 <a href="Admin-Make-Payment.html" id="makePaymentLink">
@@ -93,7 +122,10 @@
                 <a href="#"><i class="fas fa-cog"></i> Settings</a>
               </li>
               <li>
-                <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                <a href="#"
+                  ><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Logout</a
+                >
               </li>
             </ul>
           </div>
@@ -103,38 +135,42 @@
       <!-- MAIN CONTENT -->
       <div class="main-content">
         <div class="breadcrumb">
-            <span><i class="fas fa-home"></i> ACCOUNTING</span>
-            <span>|</span>
-            <span>Staff</span>
-            <i class="fa-solid fa-bell"></i>
-          </div>
+          <span><i class="fas fa-home"></i> ACCOUNTING</span>
+          <span>|</span>
+          <span>Staff</span>
+          <i class="fa-solid fa-bell"></i>
+        </div>
 
         <main>
-            <h2>Transaction History</h2>
+          <h2>Transaction History</h2>
 
-            <!-- ===== Search and Filter Section ===== -->
-            <div class="filter-section">
-                <input type="text" id="search" placeholder="Search by Student Name or ID Number">
-                <select id="program">
-                <option>Program</option>
-                <option>BSIT</option>
-                <option>BSED</option>
-                <option>BSBA</option>
-                <option>BSCS</option>
-                </select>
-                <select id="year">
-                <option>All Years</option>
-                <option>1st Year</option>
-                <option>2nd Year</option>
-                <option>3rd Year</option>
-                <option>4th Year</option>
-                </select>
-                <button id="filter-btn">Filter</button>
-                <div class="filter-icons">
-                <i class="fa-solid fa-list"></i>
-                <i class="fa-solid fa-download"></i>
-                </div>
+          <!-- ===== Search and Filter Section ===== -->
+          <div class="filter-section">
+            <input
+              type="text"
+              id="search"
+              placeholder="Search by Student Name or ID Number"
+            />
+            <select id="program">
+              <option>Program</option>
+              <option>BSIT</option>
+              <option>BSED</option>
+              <option>BSBA</option>
+              <option>BSCS</option>
+            </select>
+            <select id="year">
+              <option>All Years</option>
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+              <option>4th Year</option>
+            </select>
+            <button id="filter-btn">Filter</button>
+            <div class="filter-icons">
+              <i class="fa-solid fa-list"></i>
+              <i class="fa-solid fa-download"></i>
             </div>
+          </div>
 
           <!-- ===== Data Table ===== -->
           <table>
@@ -160,10 +196,19 @@
                 <td>Sean Patrick</td>
                 <td>BSIT</td>
                 <td>4th Year</td>
-                <td><div class="form-group">
-                <label for="payment-date">DATE<span class="input_required">*</span></label>
-                <input type="date" id="payment-date" class="date form-control" placeholder="Select Date" />
-                </div></td>
+                <td>
+                  <div class="form-group">
+                    <label for="payment-date"
+                      >DATE<span class="input_required">*</span></label
+                    >
+                    <input
+                      type="date"
+                      id="payment-date"
+                      class="date form-control"
+                      placeholder="Select Date"
+                    />
+                  </div>
+                </td>
                 <td>Oct 1, 2025</td>
                 <td>Tuition Fees</td>
                 <td>
@@ -174,7 +219,7 @@
                 </td>
                 <td><a href="#">View File</a></td>
                 <td>
-                  <select>
+                  <select class="mode-of-payment">
                     <option>GCASH</option>
                     <option>Cash</option>
                     <option>Bank</option>
@@ -188,9 +233,9 @@
                   </select>
                 </td>
                 <td class="action-icons">
-                    <i class="fa-solid fa-eye"></i>
-                    <i class="fa-solid fa-pen"></i>
-                    <i class="fa-solid fa-trash"></i>
+                  <i class="fa-solid fa-eye"></i>
+                  <i class="fa-solid fa-pen"></i>
+                  <i class="fa-solid fa-trash"></i>
                 </td>
               </tr>
 
@@ -200,84 +245,97 @@
                 <td>BSBA</td>
                 <td>2nd Year</td>
                 <td>
-                    <div class="form-group">
-                    <label for="payment-date">DATE<span class="input_required">*</span></label>
-                    <input type="date" id="payment-date" class="date form-control" placeholder="Select Date" />
-                    </div>
+                  <div class="form-group">
+                    <label for="payment-date"
+                      >DATE<span class="input_required">*</span></label
+                    >
+                    <input
+                      type="date"
+                      id="payment-date"
+                      class="date form-control"
+                      placeholder="Select Date"
+                    />
+                  </div>
                 </td>
                 <td>Sept 12, 2025</td>
                 <td>Library Fees</td>
                 <td>
-                    <select>
+                  <select>
                     <option>Regular</option>
                     <option>Scholar</option>
-                    </select>
+                  </select>
                 </td>
                 <td><a href="#">View File</a></td>
                 <td>
-                    <select>
+                  <select>
                     <option>Cash</option>
                     <option>GCASH</option>
                     <option>Bank</option>
-                    </select>
+                  </select>
                 </td>
                 <td>
-                    <select>
+                  <select>
                     <option>Pending</option>
                     <option>Paid</option>
                     <option>Cancelled</option>
-                    </select>
+                  </select>
                 </td>
                 <td class="action-icons">
-                    <i class="fa-solid fa-eye">eye</i>
-                    <i class="fa-solid fa-pen-to-square">pen</i>
-                    <i class="fa-solid fa-trash">trash</i>
-                    <i class="fa-solid fa-archive">archive</i>
+                  <i class="fa-solid fa-eye">eye</i>
+                  <i class="fa-solid fa-pen-to-square">pen</i>
+                  <i class="fa-solid fa-trash">trash</i>
+                  <i class="fa-solid fa-archive">archive</i>
                 </td>
-                </tr>
+              </tr>
 
-                <tr>
+              <tr>
                 <td>12361</td>
                 <td>Joshua Cruz</td>
                 <td>BSCS</td>
                 <td>1st Year</td>
                 <td>
-                    <div class="form-group">
-                    <label for="payment-date">DATE<span class="input_required">*</span></label>
-                    <input type="date" id="payment-date" class="date form-control" placeholder="Select Date" />
-                    </div>
+                  <div class="form-group">
+                    <label for="payment-date"
+                      >DATE<span class="input_required">*</span></label
+                    >
+                    <input
+                      type="date"
+                      id="payment-date"
+                      class="date form-control"
+                      placeholder="Select Date"
+                    />
+                  </div>
                 </td>
                 <td>Oct 10, 2025</td>
                 <td>Laboratory Fees</td>
                 <td>
-                    <select>
+                  <select>
                     <option>Scholar</option>
                     <option>Regular</option>
-                    </select>
+                  </select>
                 </td>
                 <td><a href="#">View File</a></td>
                 <td>
-                    <select>
+                  <select>
                     <option>Bank</option>
                     <option>Cash</option>
                     <option>GCASH</option>
-                    </select>
+                  </select>
                 </td>
                 <td>
-                    <select>
+                  <select>
                     <option>Cancelled</option>
                     <option>Paid</option>
                     <option>Pending</option>
-                    </select>
+                  </select>
                 </td>
                 <td class="action-icons">
-                    <i class="fa-solid fa-eye">eye</i>
-                    <i class="fa-solid fa-pen-to-square">pen</i>
-                    <i class="fa-solid fa-trash">trash</i>
-                    <i class="fa-solid fa-archive">archive</i>
+                  <i class="fa-solid fa-eye">eye</i>
+                  <i class="fa-solid fa-pen-to-square">pen</i>
+                  <i class="fa-solid fa-trash">trash</i>
+                  <i class="fa-solid fa-archive">archive</i>
                 </td>
-                </tr>
-
+              </tr>
             </tbody>
           </table>
         </main>
