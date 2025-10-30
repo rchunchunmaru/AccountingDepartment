@@ -1045,8 +1045,7 @@ body {
 
 /* Modal (reuse your existing modal styling) */
 #statusModal .modal-content {
-  max-width: 750px;   /* was 500px — now a bit wider */
-  width: 90%;         /* keeps it responsive */
+  max-width: 500px;
 }
 
 /* Bigger modal for tables */
@@ -1073,45 +1072,6 @@ body {
   padding: 10px;
   text-align: left;
   font-weight: 600;
-}
-
-/* 🔧 Fix table alignment for status modal */
-.status-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed; /* keeps all columns consistent */
-}
-
-.status-table th,
-.status-table td {
-  padding: 10px 14px;
-  text-align: center; /* centers text in all cells */
-}
-
-.status-table th:nth-child(1),
-.status-table td:nth-child(1) {
-  width: 65%; /* Pending Transaction column */
-  text-align: left; /* left-align text only for long text */
-}
-
-.status-table th:nth-child(2),
-.status-table td:nth-child(2) {
-  width: 20%; /* Date column */
-  text-align: center;
-  white-space: nowrap;
-}
-
-.status-table th:nth-child(3),
-.status-table td:nth-child(3) {
-  width: 15%; /* Action column */
-  text-align: center;
-}
-
-.status-table td i {
-  cursor: pointer;
-  color: var(--primary-color);
-  font-size: 16px;
-  vertical-align: middle;
 }
 
 .status-table td {
@@ -1232,29 +1192,6 @@ body {
   text-align: left;
 }
 
-/* 🪶 Add transparent background logo for receipt modal */
-#receiptModal .modal-content {
-  position: relative;
-  background: #fff url('logo.png') center center no-repeat; /* adjust file name as needed */
-  background-size: 200px auto; /* size of the watermark */
-  opacity: 0.98;
-}
-
-#receiptModal .modal-content::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('../images/mqc-logo.png') center center no-repeat;
-  background-size: 300px;
-  opacity: 0.30; /* control transparency */
-  z-index: 0;
-}
-
-#receiptModal .modal-content * {
-  position: relative;
-  z-index: 1; /* keep text above the watermark */
-}
-
 .remarks-form {
   display: flex;
   flex-direction: column;
@@ -1343,8 +1280,8 @@ body {
 /* Close button (X) */
 #closeReceiptModal {
   position: absolute;
-  top: -30px;
-  right: 35px;
+  top: 10px;
+  right: 20px;
   font-size: 28px;
   font-weight: 800; /* thicker */
   color: #003467;
@@ -1456,128 +1393,3 @@ body {
   z-index: 1;
 }
 
-/* Center content vertically inside each status card */
-.status-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-  cursor: pointer;
-  transition: transform 0.3s;
-  width: 100%;
-  aspect-ratio: 5 / 3;
-  max-width: 380px;
-  
-  /* 🧭 Center everything vertically */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 🧾 Better left–right spacing for receipt layout */
-.receipt-container .receipt-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 700px; /* gives more breathing space */
-  margin: 15px auto;
-  padding: 0 40px;  /* pushes left/right sections outward */
-  position: relative;
-}
-
-/* Divider line between left and right columns */
-.receipt-container .receipt-info::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
-  transform: translateX(-50%);
-}
-
-/* Left section (Name → Balance Due) */
-.receipt-container .left-info {
-  text-align: left;
-  flex: 1;
-  padding-right: 40px;
-}
-
-/* Right section (Transaction No, Date, Signature, etc.) */
-.receipt-container .right-info {
-  text-align: right;
-  flex: 1;
-  padding-left: 40px;
-}
-
-/* Fix for transaction details modal close button (top-right) */
-#transactionDetailsModal .modal-content {
-  position: relative; /* ensure absolute child is positioned correctly */
-}
-
-#closeTransactionModal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  left: auto;            /* override any left-placement rules */
-  font-size: 22px;
-  font-weight: 700;
-  color: #003467;        /* adjust color to match theme */
-  cursor: pointer;
-  z-index: 3;
-  line-height: 1;
-  transition: color 0.15s ease;
-}
-
-#closeTransactionModal:hover {
-  color: #c0392b; /* subtle hover feedback */
-}
-
-/* 💬 Style for selectable reason buttons */
-.reason-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 5px;
-}
-
-.reason-btn {
-  background: #fff;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: var(--text-xxsmall);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-/* When hovered */
-.reason-btn:hover {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-/* When selected */
-.reason-btn.selected {
-  background-color: var(--primary-color);
-  color: #fff;
-  border-color: var(--primary-color);
-}
-
-
-.reason-option:hover {
-  background-color: #0a3d62;
-  color: #fff;
-}
-
-/* When selected */
-.reason-option.selected {
-  background-color: #0a3d62;
-  color: #fff;
-  border-color: #0a3d62;
-}
