@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary The Queen College of Quezon City</title>
+    <link rel="stylesheet" href="../CSS/admin-table.css" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" sizes="180x180" />
+    <link rel="android-chrome-512x512" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512" />
+    <link rel="android-chrome-192x192" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+
+  <body>
+    <section class="navbar">
+      <div class="nav-content">
+        <div class="mqc-logo-box">
+          <img src="../images/mqc-logo.png" alt="MQCQC logo" />
+          <h3>MARY THE QUEEN COLLEGE OF QUEZON CITY</h3>
+        </div>
+        <button class="sidebar-toggle" aria-label="Toggle Dashboard Sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </section>
+
+    <div class="dashboard-container">
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+          <div class="user-info">
+            <div class="user-avatar">
+              <img src="../images/personImage.jpg" alt="User Avatar" />
+            </div>
+            <div class="user-details">
+              <h4>Name</h4>
+              <span>name@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <div class="nav-section">
+            <h5>User Dashboard</h5>
+            <ul>
+              <li><a href="index.html"><i class="fas fa-user"></i>Dashboard</a></li>
+              <li><a href="Admin-table.html"><i class="fas fa-money-check"></i>Transaction Management</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-section nav-bottom">
+            <ul>
+              <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+              <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="sidebar-panel"></div>
+      </aside>
+
+      <main class="main-content" style="width: calc(100% - 300px); margin-left: 300px;">
+
+        <div class="breadcrumb" style="margin-top: 15px; margin-left: 50px; width: calc(100% - -270px);">
+          <span><i class="fas fa-home"></i> ACCOUNTING</span>
+          <span>|</span>
+          <span>Staff</span>
+          <i class="fa-solid fa-bell"></i>
+        </div>
+
+        <!-- Transaction History Section -->
+        <section class="transaction-history" style="margin-left: 70px; width: calc(100% - -200px);">
+          <h3 class="section-title">Transaction Management</h3>
+
+          <div class="transaction-filters">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="search"
+                placeholder="Search by Student Name or ID Number"
+              />
+            </div>
+
+            <div class="filter-controls">
+              <select id="purpose">
+                <option value="">All Purposes</option>
+                <option value="Tuition Fees">Tuition Fees</option>
+                <option value="Regular">Regular</option>
+              </select>
+
+              <select id="year">
+                <option value="">All Years</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+              </select>
+
+              <button class="filter-btn" id="filter-btn">Filter</button>
+
+              <div class="icon-actions">
+                <i class="fa-solid fa-sliders"></i>
+                <i class="fa-solid fa-download"></i>
+                <i class="fa-solid fa-clipboard"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <main class="transaction-card" style="margin-left: 70px; width: calc(100% - -200px);">
+
+          <div class="table-container">
+            <table class="transaction-table">
+              <tbody>
+                <tr class="table-labels">
+                  <td>Student ID</td>
+                  <td>Student Name</td>
+                  <td>Program</td>
+                  <td>Yr Level</td>
+                  <td>Date</td>
+                  <td>Duration: From</td>
+                  <td>Duration: To</td>
+                  <td>Purpose</td>
+                  <td>Type</td>
+                  <td>File</td>
+                  <td>MOP</td>
+                  <td>Status</td>
+                  <td>Action</td>
+                </tr>
+
+                <tbody id="table-body">
+                  <tr>
+                    <td>12359</td>
+                    <td>sean patrick</td>
+                    <td>BSIT</td>
+                    <td>4<sup>th</sup> Year</td>
+                    <td><input type="date" /></td>
+                    <td><input type="date" /></td>
+                    <td><input type="date" /></td>
+                    <td>
+                      <select>
+                        <option>Midterm</option>
+                        <option>Final</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select>
+                        <option>Scholar</option>
+                        <option>Regular</option>
+                      </select>
+                    </td>
+                    <td><a href="#">View File</a></td>
+                    <td>
+                      <select>
+                        <option>Walk-in</option>
+                        <option>GCASH</option>
+                        <option>Bank</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select>
+                        <option>Paid</option>
+                        <option>Unpaid</option>
+                      </select>
+                    </td>
+                    <td class="action-icons">
+                      <i class="fa-solid fa-eye"></i>
+                      <i class="fa-solid fa-pen"></i>
+                      <i class="fa-solid fa-trash"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </tbody>
+            </table>
+
+            <!-- Preview Modal -->
+            <div id="previewModal" class="modal" style="display: none">
+              <div class="modal-content">
+                <span class="closePreviewModal">&times;</span>
+                <h2>Record Details</h2>
+                <div class="modal-body"></div>
+              </div>
+            </div>
+
+            <!-- Edit Modal -->
+            <div id="editModal" class="modal" style="display: none">
+              <div class="modal-content">
+                <h2>Edit Record</h2>
+                <div class="modal-body">
+                  <label>Student ID</label>
+                  <input type="text" />
+
+                  <label>Student Name</label>
+                  <input type="text" />
+
+                  <label>Program</label>
+                  <select>
+                    <option>BSIT</option>
+                    <option>BSBA</option>
+                    <option>BSED</option>
+                    <option>BSN</option>
+                    <option>BSA</option>
+                  </select>
+
+                  <label>Year Level</label>
+                  <select>
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                    <option>4th Year</option>
+                  </select>
+
+                  <label>Date</label>
+                  <input type="date" />
+
+                  <label>Duration From</label>
+                  <input type="date" />
+
+                  <label>Duration To</label>
+                  <input type="date" />
+
+                  <label>Purpose</label>
+                  <select>
+                    <option>Tuition Fees</option>
+                    <option>Midterm</option>
+                    <option>Final</option>
+                    <option>Miscellaneous</option>
+                  </select>
+
+                  <label>Type</label>
+                  <select>
+                    <option>Regular</option>
+                    <option>Scholar</option>
+                  </select>
+
+                  <label>File</label>
+                  <input type="file" />
+
+                  <label>Mode of Payment</label>
+                  <select>
+                    <option>Walk-in</option>
+                    <option>GCASH</option>
+                    <option>Bank</option>
+                  </select>
+
+                  <label>Status</label>
+                  <select>
+                    <option>Paid</option>
+                    <option>Unpaid</option>
+                  </select>
+                </div>
+
+                <div class="modal-footer">
+                  <button id="saveEditBtn">Save Changes</button>
+                  <button id="cancelEditBtn" class="cancel-btn">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transaction-footer">
+            <button class="add-btn">
+              <i class="fa-solid fa-plus"></i> Add Transaction
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../JS/Admin-dashboard.js"></script>
+  </body>
+</html>

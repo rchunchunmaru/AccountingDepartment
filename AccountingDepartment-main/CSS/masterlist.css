@@ -1,0 +1,734 @@
+.masterlist-card-box {
+  background: var(--container-color);
+  border-radius: var(--border-radius);
+  padding: clamp(16px, 2vw, 30px) clamp(20px, 3vw, 40px);
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: var(--profile-card-max-width);
+  margin-inline: auto;
+}
+
+/* Student Masterlist Card Title */
+.masterlist-card-title {
+  text-align: center;
+  font-size: var(--text-medium);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding-top: 0;
+}
+
+/*=================================CONTAINER==============================*/
+
+
+/* Divider */
+.masterlist-card-divider {
+  border: none;
+  border-top: 2px solid rgba(0, 52, 103, 0.75); /* primary color, 75% opacity */
+  margin: 0;
+  width: 100%;
+  opacity: 0.75;
+  margin-bottom: 2rem;
+}
+
+/* Search Bar */
+.search-bar {
+	position: relative;
+    width: 100%;     
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Masterlist Filter Section */
+.masterlist-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Select wrapper to host the caret icon (matches sidebar caret styling) */
+.masterlist-filter .select-wrapper {
+  position: relative;
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+/* Hide native arrow and make select fill wrapper */
+.masterlist-filter .select-wrapper select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--primary-color);
+  font-size: var(--text-xsmall);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: calc(12px + var(--icon-size) + 8px);
+  color: var(--primary-color);
+}
+
+/* Caret icon identical to sidebar (uses same variables) */
+.masterlist-filter .select-caret {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: var(--icon-size);
+  color: var(--primary-color);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Hide the old arrow in legacy IE/Edge */
+.masterlist-filter .select-wrapper select::-ms-expand {
+  display: none;
+}
+
+/* Custom Select (dropdown) */
+.custom-select {
+  position: relative;
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 52, 103, 0.75);
+  background: #fff;
+  color: var(--primary-color);
+  font-size: var(--text-xsmall);
+  cursor: pointer;
+}
+
+/* Ensure select trigger shows only one line with ... */
+.custom-select .select-trigger,
+.custom-select .select-trigger .select-value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select .select-menu {
+  height: 150px;            
+  width: 100%;             
+  overflow-x: auto;        
+  overflow-y: auto;         
+  white-space: nowrap;     
+  border: 1px solid #ccc;
+  background: #fff;
+  box-sizing: border-box;
+}   
+
+.custom-select .select-option {  
+  min-width: max-content;  
+  padding: 6px 8px;
+  font-size: var(--text-xxsmall);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Completely hide scrollbar by default */
+.custom-select .select-menu::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Show scrollbar on hover */
+.custom-select .select-menu:hover::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+  background: #f1f1f1 !important;
+}
+
+.custom-select .select-menu::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.custom-select .select-menu::-webkit-scrollbar-thumb {
+  background: #2c5d8f;
+  border-radius: 10px;
+}
+.custom-select .select-menu::-webkit-scrollbar-thumb:hover {
+  background: #002244;
+}
+.custom-select .select-menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* For Firefox */
+.custom-select .select-menu {
+  scrollbar-width: none;   /* Hide */
+  scrollbar-color: #2c5d8f #f1f1f1;
+}
+.custom-select .select-menu:hover {
+  scrollbar-width: auto;   /* Show */
+}
+
+/* Dim only before a selection is made */
+.custom-select:not(.has-value) .select-trigger .select-value {
+  opacity: 0.75;
+}
+.custom-select.has-value .select-trigger .select-value {
+  opacity: 1;
+}
+
+.custom-select.open .select-trigger i {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
+}
+
+.select-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 8px;
+  max-height: 200px;
+  display: none;
+}
+
+.custom-select.open .select-menu {
+  display: block;
+}
+
+.select-title {
+  font-size: var(--text-xxsmall);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 6px;
+}
+
+.select-option {
+  padding: 6px 8px;
+  font-size: var(--text-xxsmall);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.select-option:hover {
+  background-color: rgba(0, 52, 103, 0.15);
+}
+
+.select-option[aria-selected="true"] {
+  background-color: rgba(0, 52, 103, 0.15);
+  font-weight: 600;
+}
+
+/* Make the caret match sidebar size */
+.select-trigger i.fa-caret-down {
+  font-size: var(--icon-size);
+  color: var(--primary-color);
+}
+
+@media (max-width: 640px) {
+  .custom-select {
+    min-width: 180px;
+    flex: 1 1 180px;
+  }
+}
+
+.masterlist-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 8px 14px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  gap: 6px;
+}
+
+.masterlist-filter-btn i {
+  font-size: var(--icon-size);
+  pointer-events: auto; 
+}
+
+.filter-btn:hover {
+  background: #005299;
+}
+
+.filter-icons {
+  display: inline-flex;
+  gap: 10px;
+  margin-left: auto;
+  align-items: center;
+}
+
+.filter-icon {
+  font-size: var(--icon-size);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Filter Options*/
+.masterlist-filter-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 30%;
+  top: 43%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Masterlist Filter Modal Card */
+.masterlist-filter-modal-content {
+  background: #fff;
+  width: 350px;
+  max-width: 90%;
+  margin: 80px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  animation: slideDown 0.3s ease;
+}
+
+/* Slide Animation */
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Title */
+.masterlist-filter-modal-title {
+  font-size: var(--text-xsmall);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+}
+
+/* Close button (X) */
+.masterlist-filter-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: var(--icon-size);
+  color: var(--primary-color, #003467);  
+  cursor: pointer;
+  z-index: 10;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.35;
+}
+
+.masterlist-filter-modal-close:hover,
+.masterlist-filter-modal-close:focus {
+  color: var(--secondary-highlight, #e00000); 
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+
+/* Selects */
+.masterlist-filter-modal-content select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  font-size: var(--text-xsmall);
+  outline: none;
+  transition: border 0.2s;
+}
+
+.masterlist-filter-modal-content select:focus {
+  border-color: var(--primary-color);
+}
+
+
+/* Consistent focus styles for inputs and selects */
+.masterlist-filter select:focus,
+.masterlist-filter .select-wrapper select:focus,
+.filter-btn:focus {
+  outline: 0;
+  outline-offset: 2px;
+  border-color: var(--primary-color);
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 8px 36px 8px 10px; /* space for custom arrow */
+  border: 1px solid rgba(0, 52, 103, 0.5); /* 50% opacity */
+  font-size: var(--text-xsmall);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Custom arrow (Font Awesome) */
+.select-wrapper::after {
+  content: "\f0d7";
+  font-family: "Font Awesome 7 Free"; 
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--primary-color);
+  font-size: var(--text-xsmall);
+}
+
+/* Grades Table */
+.masterlist-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--text-xsmall);
+  color: var(--primary-color);
+  border: none;
+}
+
+.masterlist-table thead th {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.masterlist-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e6eef5;
+}
+
+.masterlist-table tfoot td {
+  border: none;
+  padding-top: 12px;
+}
+
+.masterlist-table td {
+  text-align: center;
+}
+
+.table-divider {
+  border: none;
+  height: 1px;
+  background: var(--primary-color);
+  opacity: 0.25;
+}
+
+/* Align label + select in one row */
+.filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Labels on the left with fixed width */
+.filter-row label {
+  flex: 0 0 80px;  
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Select wrapper takes the remaining space */
+.filter-row .select-wrapper {
+  flex: 1;
+}
+
+/* Button aligned to the right */
+.masterlist-filter-modal-content button {
+  display: block;
+  margin-left: auto;   
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.masterlist-filter-modal-content button:hover {
+  background-color: #0056a3;
+}
+
+/* EXPORT MODAL */
+.masterlist-exports-modal {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Style the inner modal box */ 
+.masterlist-export-modal-content {
+  background: #fff;
+  margin: auto;                 
+  top: 50%;                    
+  left: 60%;
+  transform: translate(-50%, -50%); 
+  position: absolute;
+  padding: 6px 8px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  width: 380px;              
+  max-width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease-in-out;
+  border: 1px solid var(--primary-color);
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+
+.masterlist-export-modal-title {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: var(--text-xxsmall);
+  margin-bottom: 18px;
+  letter-spacing: var(--letter-spacing);
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+}
+
+.masterlist-export-modal-options label {
+  display: flex;
+  align-items: center;
+  font-size: var(--text-xxsmall); 
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  padding-left:20px;
+}
+
+.masterlist-export-modal-options input[type="radio"] {
+  accent-color: var(--primary-color);
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+}
+
+.masterlist-export-modal-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 18px;
+  font-size: var(--text-xxsmall);
+  font-weight: 500;
+  cursor: pointer;
+  float: right;
+  box-shadow: 0 2px 6px rgba(4,71,123,0.10);
+  transition: background 0.15s;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.masterlist-export-modal-btn:hover {
+  background: #0056a3;
+}
+
+.masterlist-export-modal-close,
+.masterlist-sort-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: var(--icon-size);
+  color: var(--primary-color, #003467);  
+  cursor: pointer;
+  z-index: 10;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.35;
+}
+
+.masterlist-export-modal-close:hover,
+.masterlist-export-modal-close:focus,
+.masterlist-sort-modal-close:hover, 
+.masterlist-sort-modal-close:hover,
+.masterlist-modal-close:hover,
+.masterlist-modal-close:focus {
+  color: var(--secondary-highlight, #e00000); 
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+/* Modal Backdrop */
+.masterlist-sort-modal {
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.masterlist-sort-modal-content {
+  background: #fff;
+  margin: auto;                
+  top: 60%;                    
+  left: 85%;
+  transform: translate(-50%, -50%); 
+  position: absolute;
+  padding: 6px 8px;
+  width: 380px;                 
+  max-width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease-in-out;
+  background: #fff;
+  border: 1px solid var(--primary-color);
+}
+
+.masterlist-sort-modal-title {
+  font-size: var(--text-xxsmall);
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: var(--letter-spacing);
+  padding: 8px;
+  padding-bottom: 6px;
+}
+
+.sort-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 6px 8px;
+}
+
+.sort-options li {
+  padding: 6px;
+  margin: 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  font-size: var(--text-xxsmall);
+  color: var(--primary-color);
+}
+
+.sort-options li:hover {
+  background: rgba(0, 52, 103, 0.15);
+  color: var(--primary-color);
+}
+
+
+
+/* PDF Format Export Design */
+#pdfWrapper {
+  display: none; 
+  padding: 20px;
+  text-align: center;
+  font-family: var(--font-main);
+  color: var(--primary-color);
+}
+
+#pdfWrapper .pdf-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#pdfWrapper .pdf-logo {
+  width: 80px;
+  height: 80px;
+}
+
+#pdfWrapper .pdf-title h2 {
+  margin: 0;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+  font-size: var(--text-small);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#pdfWrapper .pdf-title p {
+  margin: 0;
+  font-size: var(--text-xsmall);
+  color: var(--primary-color);
+}
+
+#pdfWrapper .pdf-subtitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  border-top: 2px solid rgba(0, 52, 103, 0.5);
+  font-size: var(--text-xsmall);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+#pdfWrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto; 
+  font-size: var(--text-xsmall);
+}
+
+#pdfWrapper th {
+  background: var(--primary-color, #003467);
+  color: var(--text-color, #ffffff);
+  padding: 8px;
+  text-align: center;
+}
+
+#pdfWrapper td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#pdfWrapper tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hide action column only in PDF export */
+#pdfWrapper .masterlist-table th:last-child,
+#pdfWrapper .masterlist-table td:last-child {
+  display: none;
+}
+
+#pdfWrapper .pdf-footer {
+  margin-top: 40px;
+  font-size: var(--text-xsmall);
+  text-align: center;
+  color: var(--primary-color);
+}
