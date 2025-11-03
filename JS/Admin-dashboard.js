@@ -1,6 +1,9 @@
+import { filterTable } from "./filter-function.js";
+
 // dashboard.js (clean rebuilt version)
 
 document.addEventListener("DOMContentLoaded", () => {
+  filterTable();
   // ----------------- SIDEBAR TOGGLE -----------------
   const dboardSidebar = document.querySelector(".dashboard-sidebar");
   const toggleButton = document.querySelector(".sidebar-toggle");
