@@ -96,7 +96,7 @@
               <select id="purpose">
                 <option value="">All Purposes</option>
                 <option value="Tuition Fees">Tuition Fees</option>
-                <option value="Regular">Regular</option>
+                <option value="Tour">Tour</option>
               </select>
 
               <select id="year">
@@ -122,7 +122,7 @@
 
           <div class="table-container">
             <table class="transaction-table">
-              <tbody>
+              <thead>
                 <tr class="table-labels">
                   <td>Student ID</td>
                   <td>Student Name</td>
@@ -138,51 +138,55 @@
                   <td>Status</td>
                   <td>Action</td>
                 </tr>
+              </thead>
 
-                <tbody id="table-body">
-                  <tr>
-                    <td>12359</td>
-                    <td>sean patrick</td>
-                    <td>BSIT</td>
-                    <td>4<sup>th</sup> Year</td>
-                    <td><input type="date" /></td>
-                    <td><input type="date" /></td>
-                    <td><input type="date" /></td>
-                    <td>
+              <tbody id="table-body">
+                <tr>
+                  <td>12359</td>
+                  <td>sean patrick</td>
+                  <td>BSIT</td>
+                  <td>4<sup>th</sup> Year</td>
+                  <td><input type="date" /></td>
+                  <td><input type="date" /></td>
+                  <td><input type="date" /></td>
+                  <td>
                       <select>
-                        <option>Midterm</option>
-                        <option>Final</option>
+                        <option value="">All Purposes</option>
+                        <option value="Tuition Fees">Tuition Fees</option>
+                        <option value="Tour">Tour</option>
                       </select>
                     </td>
-                    <td>
-                      <select>
-                        <option>Scholar</option>
-                        <option>Regular</option>
-                      </select>
-                    </td>
-                    <td><a href="#">View File</a></td>
-                    <td>
-                      <select>
-                        <option>Walk-in</option>
-                        <option>GCASH</option>
-                        <option>Bank</option>
-                      </select>
-                    </td>
-                    <td>
-                      <select>
-                        <option>Paid</option>
-                        <option>Unpaid</option>
-                      </select>
-                    </td>
-                    <td class="action-icons">
-                      <i class="fa-solid fa-eye"></i>
-                      <i class="fa-solid fa-pen"></i>
-                      <i class="fa-solid fa-trash"></i>
-                    </td>
-                  </tr>
-                </tbody>
+                  <td>
+                    <select>
+                      <option>Prelim</option>
+                      <option>Midterm</option>
+                      <option>Pre-final</option>
+                      <option>Final</option>
+                    </select>
+                  </td>
+                  <td><a href="#">View File</a></td>
+                  <td>
+                    <select>
+                      <option>Walk-in</option>
+                      <option>GCASH</option>
+                      <option>Bank</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option>Paid</option>
+                      <option>Unpaid</option>
+                    </select>
+                  </td>
+                  <td class="action-icons">
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-trash"></i>
+                  </td>
+                </tr>
               </tbody>
             </table>
+
 
             <!-- Preview Modal -->
             <div id="previewModal" class="modal" style="display: none">
@@ -232,16 +236,17 @@
 
                   <label>Purpose</label>
                   <select>
-                    <option>Tuition Fees</option>
-                    <option>Midterm</option>
-                    <option>Final</option>
-                    <option>Miscellaneous</option>
+                    <option value="">All Purposes</option>
+                      <option value="Tuition Fees">Tuition Fees</option>
+                      <option value="Tour">Tour</option>
                   </select>
 
                   <label>Type</label>
                   <select>
-                    <option>Regular</option>
-                    <option>Scholar</option>
+                    <option>Prelim</option>
+                    <option>Midterm</option>
+                    <option>Pre-Finals</option>
+                    <option>Finals</option>
                   </select>
 
                   <label>File</label>

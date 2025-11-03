@@ -1,26 +1,46 @@
 export function filterTable() {
   const searchInput = document.getElementById("search");
   const tableBody = document.getElementById("table-body");
+  const purposeSelect = document.getElementById("purpose");
+  const yearSelect = document.getElementById("year");
+  const filterBtn = document.getElementById("filter-btn");
 
-  // This function filters table rows based on the search input
-  searchInput.addEventListener("input", () => {
-    const filter = searchInput.value.toLowerCase().trim();
+  // ✅ Central function to apply all filters
+  function applyFilters() {
+    const search = searchInput.value.toLowerCase().trim();
+    const selectedPurpose = purposeSelect.value.toLowerCase();
+    const selectedYear = yearSelect.value.toLowerCase();
+
     const rows = tableBody.querySelectorAll("tr");
 
     rows.forEach((row, index) => {
-      // Skip the header row (if you have one inside tbody)
+      // Skip header row if it exists inside tbody
       if (index === 0 && row.classList.contains("table-labels")) return;
 
-      // Get the student ID and name cells (adjust if your table changes)
       const studentId = row.children[0]?.textContent.toLowerCase() || "";
       const studentName = row.children[1]?.textContent.toLowerCase() || "";
+      const year = row.children[3]?.textContent.toLowerCase() || "";
+      const purpose = row.children[7]?.textContent.toLowerCase() || "";
 
-      // Check if either matches the search text
-      if (studentId.includes(filter) || studentName.includes(filter)) {
-        row.style.display = ""; // show
+      // Check for matches
+      const matchesSearch =
+        studentId.includes(search) || studentName.includes(search);
+      const matchesPurpose =
+        !selectedPurpose || purpose.includes(selectedPurpose);
+      const matchesYear = !selectedYear || year.includes(selectedYear);
+
+      // Show or hide row
+      if (matchesSearch && matchesPurpose && matchesYear) {
+        row.style.display = "";
       } else {
-        row.style.display = "none"; // hide
+        row.style.display = "none";
       }
     });
-  });
+  }
+
+  // ✅ Attach all events
+  searchInput.addEventListener("input", applyFilters);
+  purposeSelect.addEventListener("change", applyFilters);
+  yearSelect.addEventListener("change", applyFilters);
+  filterBtn.addEventListener("click", applyFilters);
 }

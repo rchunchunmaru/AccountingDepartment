@@ -360,18 +360,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <td><input type="date"></td>
       <td>
         <select>
-          <option value="">Select Purpose</option>
-          <option>Tuition Fees</option>
-          <option>Midterm</option>
-          <option>Final</option>
-          <option>Miscellaneous</option>
+          <option value="">All Purposes</option>
+          <option value="Tuition Fees">Tuition Fees</option>
+          <option value="Tour">Tour</option>>
         </select>
       </td>
       <td>
         <select>
-          <option value="">Select Type</option>
-          <option>Regular</option>
-          <option>Scholar</option>
+          <option>Prelim</option>
+          <option>Midterm</option>
+          <option>Pre-Final</option>
+          <option>Final</option>
         </select>
       </td>
       <td><input type="file"></td>
@@ -442,10 +441,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <td><input type="date" value="${dateFrom}"></td>
         <td><input type="date" value="${dateTo}"></td>
         <td>${createSelect(
-          ["Tuition Fees", "Midterm", "Final", "Miscellaneous"],
+          ["All Purposes", "Tuition Fees", "Tour"],
           purpose
         )}</td>
-        <td>${createSelect(["Regular", "Scholar"], type)}</td>
+        <td>${createSelect(
+          ["Prelim", "Midterm", "Pre-Final", "Finals"],
+          type
+        )}</td>
         <td>${file}</td>
         <td>${createSelect(["Walk-in", "GCASH", "Bank"], mop)}</td>
         <td>${createSelect(["Paid", "Unpaid"], status)}</td>
